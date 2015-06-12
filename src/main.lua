@@ -7,6 +7,8 @@ require "config"
 require "cocos.init"
 
 local function main()
+	require "my.network.Network"
+	Network.send()
     require("app.MyApp"):create():run()
 end
 

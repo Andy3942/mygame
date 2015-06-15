@@ -7,9 +7,13 @@ require "config"
 require "cocos.init"
 
 local function main()
-	require "my.network.Network"
+	require("my/classload/ClassUtil")
+	ClassUtil.openAutoload()
 	Network.send()
-    require("app.MyApp"):create():run()
+	Network.send()
+	-- require "my.network.Network"
+	-- Network.send()
+ --    require("app.MyApp"):create():run()
 end
 
 local status, msg = xpcall(main, __G__TRACKBACK__)

@@ -10,7 +10,6 @@ local function main()
 	require("my/classload/ClassUtil")
 	ClassUtil.openAutoload()
 	Network.send()
-	Network.send()
 	-- require "my.network.Network"
 	-- Network.send()
  --    require("app.MyApp"):create():run()

@@ -1,7 +1,3 @@
--- Author: 	bzx
--- Date: 	2015-06-12
--- Purpose: 网络层
-
 local M = {}
 rawset(_G, "ClassUtil", M)
 package.seeall(M)

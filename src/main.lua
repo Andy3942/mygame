@@ -9,9 +9,18 @@ require "cocos.init"
 local function main()
 	require("my/classload/ClassUtil")
 	ClassUtil.openAutoload()
-	Network.send()
-	-- require "my.network.Network"
-	-- Network.send()
+	--Network.send()
+	local scene = display.newScene("MainScene")
+	display.runScene(scene)
+
+	local layer = display.newLayer()
+	scene:addChild(layer)
+
+	--local layout = ccs.GUIReader:getInstance():widgetFromJsonFile("UITest/UITest.json")
+	local layout = ccs.GUIReader:getInstance():widgetFromBinaryFile("csb/TestScene.csb")
+    print(layout)
+    layer:addChild(layout)
+
  --    require("app.MyApp"):create():run()
 end
 

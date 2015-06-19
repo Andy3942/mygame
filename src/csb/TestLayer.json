@@ -1,0 +1,179 @@
+{
+  "ID": "689a0859-ce1d-4d0d-a41c-4a7b4131ebf6",
+  "Version": "2.3.0.0",
+  "Name": "TestLayer",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 30,
+        "Speed": 1.0,
+        "Timelines": [
+          {
+            "ActionTag": -841046059,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": 102.0,
+                "Y": 52.2495,
+                "FrameIndex": 2,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 519.0,
+                "Y": 204.2495,
+                "FrameIndex": 30,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          }
+        ],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 188,
+        "Children": [
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Press.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Normal.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 16,
+            "Scale9Height": 14,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 407.0,
+              "Y": 176.0019
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.424,
+              "Y": 0.275
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 384.0,
+            "RightMargin": 530.0,
+            "TopMargin": 445.998,
+            "BottomMargin": 158.0019,
+            "Tag": 189,
+            "ActionTag": 1983687585,
+            "Size": {
+              "X": 46.0,
+              "Y": 36.0
+            },
+            "Name": "sendMessageBtn",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Default",
+              "Path": "Default/Sprite.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 340.2857,
+              "Y": 139.1067
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3545,
+              "Y": 0.2174
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 317.2857,
+            "RightMargin": 596.7142,
+            "TopMargin": 477.8933,
+            "BottomMargin": 116.1067,
+            "Tag": 196,
+            "ActionTag": -841046059,
+            "Size": {
+              "X": 46.0,
+              "Y": 46.0
+            },
+            "Name": "Sprite_1",
+            "ctype": "SpriteObjectData"
+          }
+        ],
+        "Size": {
+          "X": 960.0,
+          "Y": 640.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "Default/Sprite.png",
+        "Default/Button_Normal.png",
+        "Default/Button_Press.png",
+        "Default/Button_Disable.png"
+      ],
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

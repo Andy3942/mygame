@@ -13,6 +13,12 @@
 #include "ide-support/RuntimeLuaImpl.h"
 #endif
 
+
+#include "ScriptManager.h"
+
+#include <unistd.h>
+#include <iostream>
+
 using namespace CocosDenshion;
 
 USING_NS_CC;
@@ -77,11 +83,47 @@ bool AppDelegate::applicationDidFinishLaunching()
     runtimeEngine->addRuntime(RuntimeLuaImpl::create(), kRuntimeEngineLua);
     runtimeEngine->start();
 #else
-    if (engine->executeScriptFile("src/main.lua"))
-    {
-        return false;
-    }
+//    if (engine->executeScriptFile("src/main.lua"))
+//    {
+//        return false;
+//    }
 #endif
+//    printf("第一个线程\n");
+//    ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test2.lua");
+//    printf("第二个线程\n");
+//    ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test1.lua");
+
+
+
+
+
+
+
+
+
+    std::mutex m;
+
+    thread t1([&m]()
+
+    {
+        ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test2.lua");
+    } );
+
+ 
+
+    thread t2([&m]() 
+
+    {          
+        ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test1.lua");
+    } ); 
+
+    t1.join();     
+//
+    t2.join();     
+
+
+
+    cout<<"Main Thread"<<endl;
 
     return true;
 }

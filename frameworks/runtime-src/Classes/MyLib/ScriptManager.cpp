@@ -26,5 +26,6 @@ void ScriptManager::asyncExecuteScriptFile(const char *filename)
 {
     auto engine = LuaEngine::getInstance();
     LuaStack* L = engine->getLuaStack();
-    L->executeScriptFile(filename);
+    luaL_loadfile(L->getLuaState(), filename);
+    //L->executeScriptFile(filename);
 }

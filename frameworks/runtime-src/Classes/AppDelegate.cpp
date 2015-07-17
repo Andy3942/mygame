@@ -83,10 +83,10 @@ bool AppDelegate::applicationDidFinishLaunching()
     runtimeEngine->addRuntime(RuntimeLuaImpl::create(), kRuntimeEngineLua);
     runtimeEngine->start();
 #else
-//    if (engine->executeScriptFile("src/main.lua"))
-//    {
-//        return false;
-//    }
+    if (engine->executeScriptFile("src/main.lua"))
+    {
+        //return false;
+    }
 #endif
 //    printf("第一个线程\n");
 //    ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test2.lua");

@@ -5,7 +5,7 @@ function haha( ... )
 		_G["hei"] = _G["hei"] or 0
 		_G["hei"] = _G["hei"] + 1
 		print("h3h3===", _G["hei"])
-		socket.sleep(1)
+		socket.sleep(3)
 	end
 end
 haha()

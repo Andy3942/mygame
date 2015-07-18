@@ -141,6 +141,19 @@ int lua_release_print(lua_State * L)
     
     return 0;
 }
+
+int lua_lock(lua_State* L)
+{
+    mylua_lock(L);
+    return 0;
+}
+
+int lua_unlock(lua_State* L)
+{
+    mylua_unlock(L);
+    return 0;
+}
+
 }
 
 NS_CC_BEGIN
@@ -169,43 +182,6 @@ LuaStack *LuaStack::attach(lua_State *L)
     return stack;
 }
 
-LuaStack *LuaStack::createClean(void)
-{
-    LuaStack *stack = new (std::nothrow) LuaStack();
-    stack->initWithClean();
-    stack->autorelease();
-    return stack;
-}
-
-bool LuaStack::initWithClean(void)
-{
-    _state = lua_open();
-    luaL_openlibs(_state);
-    toluafix_open(_state);
-
-    // Register our version of the global "print" function
-    const luaL_reg global_functions [] = {
-        {"print", lua_print},
-        {"release_print",lua_release_print},
-        {nullptr, nullptr}
-    };
-    luaL_register(_state, "_G", global_functions);
-
-    register_network_module(_state);
-    
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
-    LuaObjcBridge::luaopen_luaoc(_state);
-#endif
-    
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    LuaJavaBridge::luaopen_luaj(_state);
-#endif
-    // add cocos2dx loader
-    addLuaLoader(cocos2dx_lua_loader);
-
-    return true;
-}
-
 bool LuaStack::init(void)
 {
     _state = lua_open();
@@ -216,6 +192,8 @@ bool LuaStack::init(void)
     const luaL_reg global_functions [] = {
         {"print", lua_print},
         {"release_print",lua_release_print},
+        {"lock", lua_lock},
+        {"unlock", lua_unlock},
         {nullptr, nullptr}
     };
     luaL_register(_state, "_G", global_functions);

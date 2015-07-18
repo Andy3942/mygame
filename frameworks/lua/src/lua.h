@@ -11,6 +11,7 @@
 
 #include <stdarg.h>
 #include <stddef.h>
+#include <pthread.h>
 
 
 #include "luaconf.h"

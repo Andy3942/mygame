@@ -113,7 +113,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     thread t2([&m]() 
 
-    {          
+    {
         ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test1.lua");
     } ); 
 

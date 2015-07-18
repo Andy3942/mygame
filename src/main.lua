@@ -1,10 +1,10 @@
 
-cc.FileUtils:getInstance():setPopupNotify(false)
-cc.FileUtils:getInstance():addSearchPath("src/")
-cc.FileUtils:getInstance():addSearchPath("res/")
+-- cc.FileUtils:getInstance():setPopupNotify(false)
+-- cc.FileUtils:getInstance():addSearchPath("src/")
+-- cc.FileUtils:getInstance():addSearchPath("res/")
 
-require "config"
-require "cocos.init"
+-- require "config"
+-- require "cocos.init"
 
 local function main()
 	-- require("my/classload/ClassUtil")
@@ -22,9 +22,12 @@ local function main()
  --    layer:addChild(layout)
 
  -- --    require("app.MyApp"):create():run()
+ print("fuck")
 end
 
-local status, msg = xpcall(main, __G__TRACKBACK__)
-if not status then
-    print(msg)
-end
+main()
+
+-- local status, msg = xpcall(main, __G__TRACKBACK__)
+-- if not status then
+--     print(msg)
+-- end

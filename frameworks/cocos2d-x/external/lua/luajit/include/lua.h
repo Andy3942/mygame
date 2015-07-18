@@ -215,6 +215,12 @@ LUA_API int  (lua_resume) (lua_State *L, int narg);
 LUA_API int  (lua_status) (lua_State *L);
 
 /*
+**  mylua functions
+*/
+LUA_API void mylua_lock(lua_State *L);
+LUA_API void mylua_unlock(lua_State *L);
+
+/*
 ** garbage-collection function and options
 */
 

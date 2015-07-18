@@ -55,7 +55,6 @@ public:
      */
     static LuaStack *create(void);
     
-    static LuaStack *createClean(void);
     /**
      * Create a LuaStack object with the existed lua_State.
      */
@@ -352,7 +351,6 @@ protected:
     
     bool init(void);
     bool initWithLuaState(lua_State *L);
-    bool initWithClean(void);
     
     lua_State *_state;
     int _callFromLua;

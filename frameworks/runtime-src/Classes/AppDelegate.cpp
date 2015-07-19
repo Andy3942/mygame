@@ -19,6 +19,14 @@
 #include <unistd.h>
 #include <iostream>
 
+
+
+#include "CCLuaEngine.h"
+#include "SimpleAudioEngine.h"
+#include "cocos2d.h"
+#include "lua_module_register.h"
+
+
 using namespace CocosDenshion;
 
 USING_NS_CC;
@@ -83,10 +91,12 @@ bool AppDelegate::applicationDidFinishLaunching()
     runtimeEngine->addRuntime(RuntimeLuaImpl::create(), kRuntimeEngineLua);
     runtimeEngine->start();
 #else
-    if (engine->executeScriptFile("src/main.lua"))
-    {
-        //return false;
-    }
+
+
+//    if (engine->executeScriptFile("src/main.lua"))
+//    {
+//        //return false;
+//    }
 #endif
 //    printf("第一个线程\n");
 //    ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test2.lua");
@@ -103,26 +113,49 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     std::mutex m;
 
-    thread t1([&m]()
+    thread t1([&m, L, stack]()
 
     {
-        ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test2.lua");
+//        for(int i = 1; i < 1000; ++i)
+//        {
+//            printf("1");
+//        }
+        m.lock();
+        luaL_loadfile(L, "src/my/test/test2.lua");
+        m.unlock();
+        stack->executeScriptFile("src/my/test/test2.lua");
+        //ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test2.lua", m);
     } );
 
  
 
-    thread t2([&m]() 
+    thread t2([&m, L, stack]()
 
     {
-        ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test1.lua");
+//        for(int i = 1; i < 1000; ++i)
+//        {
+//            printf("2");
+//        }
+
+        m.lock();
+        luaL_loadfile(L, "src/my/test/test1.lua");
+        m.unlock();
+        stack->executeScriptFile("src/my/test/test1.lua");
+        //ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test1.lua", m);
     } ); 
 
-    t1.join();     
-//
-    t2.join();     
 
 
 
+
+
+    if (engine->executeScriptFile("src/main.lua"))
+    {
+        //return false;
+    }
+    t1.join();
+    //
+    t2.join();
     cout<<"Main Thread"<<endl;
 
     return true;

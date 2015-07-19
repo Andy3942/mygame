@@ -54,7 +54,9 @@ public:
      * Create a LuaStack object, it will new a lua_State.
      */
     static LuaStack *create(void);
-    
+
+    static LuaStack *createClean(void);
+
     /**
      * Create a LuaStack object with the existed lua_State.
      */

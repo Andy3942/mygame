@@ -1,10 +1,15 @@
 require "socket"
 local function hehe( ... )
-	for i = 1, 10 do
-		_G["hei2"] = _G["hei2"] or 0
-		_G["hei2"] = _G["hei2"] + 1
-		print("haha===", _G["hei2"])
-		socket.sleep(3)
+	for i = 1, 10000 do
+		_G["hei"] = _G["hei"] or ""
+		_G["hei"] = _G["hei"] .. "+1"
+		_G["hei"] = _G["hei"] .. "+2"
+		_G["hei"] = _G["hei"] .. "+3"
+		_G["hei"] = _G["hei"] .. "+4"
+		_G["hei"] = _G["hei"] .. "+5\n"
+		-- print("1====\n", _G["hei"])
+		--socket.sleep(3)
+		print("1")
 	end
 end
 hehe()

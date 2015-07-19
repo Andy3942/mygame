@@ -5,8 +5,14 @@
 
 -- require "config"
 -- require "cocos.init"
-
+require "socket"
 local function main()
+	for i = 1, 10000 do
+		-- print("fuck=====\n")
+		-- print(hei)
+		print("main==")
+		--socket.sleep(1)
+	end
 	-- require("my/classload/ClassUtil")
 	-- ClassUtil.openAutoload()
 	-- --Network.send()

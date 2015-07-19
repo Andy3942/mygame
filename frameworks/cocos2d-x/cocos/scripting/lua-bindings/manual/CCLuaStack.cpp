@@ -95,7 +95,8 @@ int lua_print(lua_State * luastate)
         if (i!=nargs)
             t += "\t";
     }
-    CCLOG("[LUA-print] %s", t.c_str());
+    printf("%s", t.c_str());
+    //CCLOG("[LUA-print] %s", t.c_str());
 
     return 0;
 }
@@ -144,13 +145,11 @@ int lua_release_print(lua_State * L)
 
 int lua_lock(lua_State* L)
 {
-    mylua_lock(L);
     return 0;
 }
 
 int lua_unlock(lua_State* L)
 {
-    mylua_unlock(L);
     return 0;
 }
 

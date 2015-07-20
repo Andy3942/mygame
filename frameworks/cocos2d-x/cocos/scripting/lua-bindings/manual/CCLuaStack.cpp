@@ -173,12 +173,52 @@ LuaStack *LuaStack::create(void)
     return stack;
 }
 
+LuaStack *LuaStack::createClean()
+{
+    LuaStack *stack = new (std::nothrow) LuaStack();
+    stack->initWithClean();
+    stack->autorelease();
+    return stack;
+}
+
 LuaStack *LuaStack::attach(lua_State *L)
 {
     LuaStack *stack = new (std::nothrow) LuaStack();
     stack->initWithLuaState(L);
     stack->autorelease();
     return stack;
+}
+
+bool LuaStack::initWithClean()
+{
+    _state = lua_open();
+    luaL_openlibs(_state);
+    toluafix_open(_state);
+
+    // Register our version of the global "print" function
+    const luaL_reg global_functions [] = {
+        {"print", lua_print},
+        {"release_print",lua_release_print},
+        {"lock", lua_lock},
+        {"unlock", lua_unlock},
+        {nullptr, nullptr}
+    };
+    luaL_register(_state, "_G", global_functions);
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
+    LuaObjcBridge::luaopen_luaoc(_state);
+#endif
+    
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    LuaJavaBridge::luaopen_luaj(_state);
+#endif
+    tolua_script_handler_mgr_open(_state);
+
+    // add cocos2dx loader
+    addLuaLoader(cocos2dx_lua_loader);
+
+    return true;
+
 }
 
 bool LuaStack::init(void)

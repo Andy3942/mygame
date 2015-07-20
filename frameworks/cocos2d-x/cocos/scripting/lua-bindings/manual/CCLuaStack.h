@@ -353,7 +353,7 @@ protected:
     
     bool init(void);
     bool initWithLuaState(lua_State *L);
-    
+    bool initWithClean();
     lua_State *_state;
     int _callFromLua;
     bool  _xxteaEnabled;

@@ -261,8 +261,8 @@
 		566F016019B5EB0F00FCA620 /* CustomGUIReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 566F015D19B5EB0F00FCA620 /* CustomGUIReader.cpp */; };
 		566F016119B5EB0F00FCA620 /* CustomGUIReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 566F015E19B5EB0F00FCA620 /* CustomGUIReader.h */; };
 		566F016219B5EB0F00FCA620 /* CustomGUIReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 566F015E19B5EB0F00FCA620 /* CustomGUIReader.h */; };
-		7EBE15DD1B5AC96600D37E10 /* liblua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EBE15DC1B5AC96600D37E10 /* liblua.a */; };
-		7EBE15DE1B5AC96600D37E10 /* liblua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EBE15DC1B5AC96600D37E10 /* liblua.a */; };
+		7E7775CF1B5CB06100D43C0B /* liblua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7775CE1B5CB06100D43C0B /* liblua.a */; };
+		7E7775D01B5CB06100D43C0B /* liblua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7775CE1B5CB06100D43C0B /* liblua.a */; };
 		7ECCB2F31B595D4D00A18BFA /* libluajit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECCB2F21B595D4D00A18BFA /* libluajit.a */; };
 		F4FE0D5719ECD00100B8B12B /* luasocket_scripts.c in Sources */ = {isa = PBXBuildFile; fileRef = F4FE0D5519ECD00100B8B12B /* luasocket_scripts.c */; };
 		F4FE0D5819ECD00100B8B12B /* luasocket_scripts.c in Sources */ = {isa = PBXBuildFile; fileRef = F4FE0D5519ECD00100B8B12B /* luasocket_scripts.c */; };
@@ -410,7 +410,7 @@
 		3E2BDB0919C5E6100055CDCD /* lua_cocos2dx_audioengine_manual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_cocos2dx_audioengine_manual.h; sourceTree = "<group>"; };
 		566F015D19B5EB0F00FCA620 /* CustomGUIReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CustomGUIReader.cpp; sourceTree = "<group>"; };
 		566F015E19B5EB0F00FCA620 /* CustomGUIReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomGUIReader.h; sourceTree = "<group>"; };
-		7EBE15DC1B5AC96600D37E10 /* liblua.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblua.a; path = ../../../../external/lua/liblua.a; sourceTree = "<group>"; };
+		7E7775CE1B5CB06100D43C0B /* liblua.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblua.a; path = ../../../../external/lua/lua/prebuilt/ios/liblua.a; sourceTree = "<group>"; };
 		7ECCB2F21B595D4D00A18BFA /* libluajit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libluajit.a; sourceTree = "<group>"; };
 		F4FE0D5519ECD00100B8B12B /* luasocket_scripts.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = luasocket_scripts.c; sourceTree = "<group>"; };
 		F4FE0D5619ECD00100B8B12B /* luasocket_scripts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = luasocket_scripts.h; sourceTree = "<group>"; };
@@ -421,7 +421,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EBE15DD1B5AC96600D37E10 /* liblua.a in Frameworks */,
+				7E7775CF1B5CB06100D43C0B /* liblua.a in Frameworks */,
 				7ECCB2F31B595D4D00A18BFA /* libluajit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,7 +430,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EBE15DE1B5AC96600D37E10 /* liblua.a in Frameworks */,
+				7E7775D01B5CB06100D43C0B /* liblua.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,7 +459,7 @@
 		1551A334158F2AB200E66CFE = {
 			isa = PBXGroup;
 			children = (
-				7EBE15DC1B5AC96600D37E10 /* liblua.a */,
+				7E7775CE1B5CB06100D43C0B /* liblua.a */,
 				1ABCA1E218CD8F230087CE3A /* external */,
 				1AACE74818BC45C200215002 /* auto */,
 				1AACE75B18BC45C200215002 /* manual */,
@@ -1217,6 +1217,8 @@
 					"/Users/bzx/Documents/git/mygame/frameworks/cocos2d-x/external/lua/luajit/prebuilt/ios",
 					"$(PROJECT_DIR)",
 					"/Users/bzx/Documents/git/mygame/frameworks/cocos2d-x/external/lua",
+					"/Users/bzx/Documents/git/mygame/frameworks/cocos2d-x/external/lua/lua/prebuilt",
+					"/Users/bzx/Documents/git/mygame/frameworks/cocos2d-x/external/lua/lua/prebuilt/ios",
 				);
 				PRODUCT_NAME = "libluacocos2d Mac";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1245,6 +1247,8 @@
 					"/Users/bzx/Documents/git/mygame/frameworks/cocos2d-x/external/lua/luajit/prebuilt/ios",
 					"$(PROJECT_DIR)",
 					"/Users/bzx/Documents/git/mygame/frameworks/cocos2d-x/external/lua",
+					"/Users/bzx/Documents/git/mygame/frameworks/cocos2d-x/external/lua/lua/prebuilt",
+					"/Users/bzx/Documents/git/mygame/frameworks/cocos2d-x/external/lua/lua/prebuilt/ios",
 				);
 				PRODUCT_NAME = "libluacocos2d Mac";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1271,6 +1275,8 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/lua-fmrbzgzhhtebjhahojczgtfalwlz/Build/Products/Debug-iphoneos",
 					"$(PROJECT_DIR)",
 					"/Users/bzx/Documents/git/mygame/frameworks/cocos2d-x/external/lua",
+					"/Users/bzx/Documents/git/mygame/frameworks/cocos2d-x/external/lua/lua/prebuilt",
+					"/Users/bzx/Documents/git/mygame/frameworks/cocos2d-x/external/lua/lua/prebuilt/ios",
 				);
 				PRODUCT_NAME = "libluacocos2d iOS";
 				SDKROOT = iphoneos;
@@ -1299,6 +1305,8 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/lua-fmrbzgzhhtebjhahojczgtfalwlz/Build/Products/Debug-iphoneos",
 					"$(PROJECT_DIR)",
 					"/Users/bzx/Documents/git/mygame/frameworks/cocos2d-x/external/lua",
+					"/Users/bzx/Documents/git/mygame/frameworks/cocos2d-x/external/lua/lua/prebuilt",
+					"/Users/bzx/Documents/git/mygame/frameworks/cocos2d-x/external/lua/lua/prebuilt/ios",
 				);
 				PRODUCT_NAME = "libluacocos2d iOS";
 				SDKROOT = iphoneos;

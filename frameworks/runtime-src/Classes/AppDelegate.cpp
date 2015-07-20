@@ -116,15 +116,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     thread t1([&m, L, stack]()
 
     {
-//        for(int i = 1; i < 1000; ++i)
-//        {
-//            printf("1");
-//        }
-        m.lock();
-        luaL_loadfile(L, "src/my/test/test2.lua");
-        m.unlock();
-        stack->executeScriptFile("src/my/test/test2.lua");
-        //ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test2.lua", m);
+        ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test2.lua");
     } );
 
  
@@ -132,19 +124,8 @@ bool AppDelegate::applicationDidFinishLaunching()
     thread t2([&m, L, stack]()
 
     {
-//        for(int i = 1; i < 1000; ++i)
-//        {
-//            printf("2");
-//        }
-
-        m.lock();
-        luaL_loadfile(L, "src/my/test/test1.lua");
-        m.unlock();
-        stack->executeScriptFile("src/my/test/test1.lua");
-        //ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test1.lua", m);
+        ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test1.lua");
     } ); 
-
-
 
 
 

@@ -24,9 +24,6 @@ ScriptManager* ScriptManager::getInstance()
 
 void ScriptManager::asyncExecuteScriptFile(const char *filename)
 {
-    auto engine = LuaEngine::getInstance();
-    LuaStack* L = engine->getLuaStack();
-    //L = LuaStack::createClean();
-    luaL_loadfile(L->getLuaState(), filename);
-    //L->executeScriptFile(filename);
+    LuaStack* L = LuaStack::createClean();
+    L->executeScriptFile(filename);
 }

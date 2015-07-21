@@ -14,7 +14,7 @@
 #endif
 
 
-#include "ScriptManager.h"
+#include "MyScriptManager.h"
 
 #include <unistd.h>
 #include <iostream>
@@ -98,45 +98,15 @@ bool AppDelegate::applicationDidFinishLaunching()
 //        //return false;
 //    }
 #endif
-//    printf("第一个线程\n");
-//    ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test2.lua");
-//    printf("第二个线程\n");
-//    ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test1.lua");
 
+    my::ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test2.lua", 1);
 
-
-
-
-
-
-
-
-    std::mutex m;
-
-    thread t1([&m, L, stack]()
-
-    {
-        ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test2.lua");
-    } );
-
- 
-
-    thread t2([&m, L, stack]()
-
-    {
-        ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test1.lua");
-    } ); 
-
-
-
+    my::ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test1.lua", 2);
 
     if (engine->executeScriptFile("src/main.lua"))
     {
         //return false;
     }
-    t1.join();
-    //
-    t2.join();
     cout<<"Main Thread"<<endl;
 
     return true;

@@ -54,9 +54,8 @@ public:
      * Create a LuaStack object, it will new a lua_State.
      */
     static LuaStack *create(void);
-
-    static LuaStack *createClean(void);
-
+    
+    static LuaStack *createWithLight(void);
     /**
      * Create a LuaStack object with the existed lua_State.
      */
@@ -353,7 +352,8 @@ protected:
     
     bool init(void);
     bool initWithLuaState(lua_State *L);
-    bool initWithClean();
+    bool initWithLight();
+    
     lua_State *_state;
     int _callFromLua;
     bool  _xxteaEnabled;

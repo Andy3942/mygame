@@ -10,7 +10,7 @@ local function main()
 	for i = 1, 10000 do
 		-- print("fuck=====\n")
 		-- print(hei)
-		print("main==")
+		print("main==", i)
 		--socket.sleep(1)
 	end
 	-- require("my/classload/ClassUtil")

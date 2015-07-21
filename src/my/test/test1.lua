@@ -9,7 +9,7 @@ local function hehe( ... )
 		-- _G["hei"] = _G["hei"] .. "+5\n"
 		-- print("1====\n", _G["hei"])
 		--socket.sleep(3)
-		print("1")
+		print("1=", i)
 	end
 end
 hehe()

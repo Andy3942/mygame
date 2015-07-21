@@ -120,11 +120,6 @@ int socket_select(t_socket n, fd_set *rfds, fd_set *wfds, fd_set *efds,
 \*-------------------------------------------------------------------------*/
 int socket_create(p_socket ps, int domain, int type, int protocol) {
     *ps = socket(domain, type, protocol);
-    
-    // 忽略SIGPIPE信号，系统对SIGPIPE信号的默认处理方式是终止进程
-    const int set = 1;  
-    setsockopt(*ps, SOL_SOCKET, SO_NOSIGPIPE, (void *)&set, sizeof(set)); 
-    
     if (*ps != SOCKET_INVALID) return IO_DONE; 
     else return errno; 
 }

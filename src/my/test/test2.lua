@@ -11,7 +11,7 @@ function haha( ... )
 		-- print("h3h3===", _G["hei"])
 		--print("2====\n", _G["hei"])
 		--socket.sleep(3)
-		print("2")
+		print("2=", i)
 	end
 end
 haha()

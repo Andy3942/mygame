@@ -26,6 +26,8 @@
 #include "cocos2d.h"
 #include "lua_module_register.h"
 
+#include "MyMap.h"
+
 
 using namespace CocosDenshion;
 

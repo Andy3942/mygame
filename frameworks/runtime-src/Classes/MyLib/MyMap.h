@@ -19,9 +19,13 @@
 NS_MY_BEGIN
 
 template<class K, class V>
-class Map
+class Map:public Ref
 {
 public:
+    virtual ~Map<K, V>()
+    {
+    }
+    
     static Map<K, V>* create()
     {
         auto ret = new(std::nothrow) Map<K, V>();
@@ -56,7 +60,8 @@ public:
         
         return 0;
     }
-
+    
+    
 private:
     std::unordered_map<K, V> _data;
 };

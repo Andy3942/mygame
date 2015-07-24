@@ -7,6 +7,12 @@
 -- require "cocos.init"
 require "socket"
 local function main()
+
+	local data = my.Map:create()
+	data:insert("123123", 1313)
+
+	print("data===========", data:at("123123"))
+
 	for i = 1, 10000 do
 		-- print("fuck=====\n")
 		-- print(hei)

@@ -26,7 +26,10 @@
 #include "cocos2d.h"
 #include "lua_module_register.h"
 
+#include "lua_my_base_auto.hpp"
+
 #include "MyMap.h"
+
 
 
 using namespace CocosDenshion;
@@ -77,6 +80,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     ScriptEngineManager::getInstance()->setScriptEngine(engine);
     lua_State* L = engine->getLuaStack()->getLuaState();
     lua_module_register(L);
+    register_all_my_base(L);
 
     register_all_packages();
 

@@ -49,9 +49,12 @@
 		5200BECA1A53D9A500AC45E4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5200BEC91A53D9A500AC45E4 /* Security.framework */; };
 		521A8E7019F0C3D200D177D7 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6E19F0C3D200D177D7 /* Default-667h@2x.png */; };
 		521A8E7119F0C3D200D177D7 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6F19F0C3D200D177D7 /* Default-736h@3x.png */; };
-		7E7775D71B5CB2C300D43C0B /* MyScriptManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E7775D51B5CB2C300D43C0B /* MyScriptManager.cpp */; };
-		7E7775DB1B5CD26900D43C0B /* MyAsyncTask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E7775D91B5CD26900D43C0B /* MyAsyncTask.cpp */; };
-		7E7775DE1B5CD27A00D43C0B /* MyAsyncTaskManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E7775DC1B5CD27A00D43C0B /* MyAsyncTaskManager.cpp */; };
+		7E7714F51B623FAB00CEBED3 /* lua_my_base_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E7714F31B623FAB00CEBED3 /* lua_my_base_auto.cpp */; };
+		7E7714FB1B62400D00CEBED3 /* MyMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E7714F71B62400D00CEBED3 /* MyMap.cpp */; };
+		7E7714FC1B62400D00CEBED3 /* MyVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E7714F91B62400D00CEBED3 /* MyVector.cpp */; };
+		7E7715071B62524000CEBED3 /* MyAsyncTaskManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E7715011B62524000CEBED3 /* MyAsyncTaskManager.cpp */; };
+		7E7715081B62524000CEBED3 /* MyDataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E7715031B62524000CEBED3 /* MyDataManager.cpp */; };
+		7E7715091B62524000CEBED3 /* MyScriptManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E7715051B62524000CEBED3 /* MyScriptManager.cpp */; };
 		9FC760431A67791200D1E6E7 /* lang in Resources */ = {isa = PBXBuildFile; fileRef = 9FC760401A67791200D1E6E7 /* lang */; };
 		9FC760451A677A4A00D1E6E7 /* SimpleConfigParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FC760411A67791200D1E6E7 /* SimpleConfigParser.cpp */; };
 		9FF504841A5E87B100AFDA55 /* ConsoleWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FF504811A5E87B100AFDA55 /* ConsoleWindow.xib */; };
@@ -212,15 +215,19 @@
 		5200BEC91A53D9A500AC45E4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		521A8E6E19F0C3D200D177D7 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
 		521A8E6F19F0C3D200D177D7 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
-		7E7714CB1B60FA9600CEBED3 /* MyVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVector.h; sourceTree = "<group>"; };
-		7E7775D51B5CB2C300D43C0B /* MyScriptManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyScriptManager.cpp; sourceTree = "<group>"; };
-		7E7775D61B5CB2C300D43C0B /* MyScriptManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScriptManager.h; sourceTree = "<group>"; };
+		7E7714F31B623FAB00CEBED3 /* lua_my_base_auto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_my_base_auto.cpp; sourceTree = "<group>"; };
+		7E7714F41B623FAB00CEBED3 /* lua_my_base_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_my_base_auto.hpp; sourceTree = "<group>"; };
+		7E7714F71B62400D00CEBED3 /* MyMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyMap.cpp; sourceTree = "<group>"; };
+		7E7714F81B62400D00CEBED3 /* MyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMap.h; sourceTree = "<group>"; };
+		7E7714F91B62400D00CEBED3 /* MyVector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyVector.cpp; sourceTree = "<group>"; };
+		7E7714FA1B62400D00CEBED3 /* MyVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVector.h; sourceTree = "<group>"; };
+		7E7715011B62524000CEBED3 /* MyAsyncTaskManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyAsyncTaskManager.cpp; sourceTree = "<group>"; };
+		7E7715021B62524000CEBED3 /* MyAsyncTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAsyncTaskManager.h; sourceTree = "<group>"; };
+		7E7715031B62524000CEBED3 /* MyDataManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyDataManager.cpp; sourceTree = "<group>"; };
+		7E7715041B62524000CEBED3 /* MyDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDataManager.h; sourceTree = "<group>"; };
+		7E7715051B62524000CEBED3 /* MyScriptManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyScriptManager.cpp; sourceTree = "<group>"; };
+		7E7715061B62524000CEBED3 /* MyScriptManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScriptManager.h; sourceTree = "<group>"; };
 		7E7775D81B5CCF6200D43C0B /* MyMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyMacros.h; sourceTree = "<group>"; };
-		7E7775D91B5CD26900D43C0B /* MyAsyncTask.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyAsyncTask.cpp; sourceTree = "<group>"; };
-		7E7775DA1B5CD26900D43C0B /* MyAsyncTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAsyncTask.h; sourceTree = "<group>"; };
-		7E7775DC1B5CD27A00D43C0B /* MyAsyncTaskManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyAsyncTaskManager.cpp; sourceTree = "<group>"; };
-		7E7775DD1B5CD27A00D43C0B /* MyAsyncTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAsyncTaskManager.h; sourceTree = "<group>"; };
-		7EFCD1771B5E4E9D00D81D5F /* MyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMap.h; sourceTree = "<group>"; };
 		9FC7603F1A67791200D1E6E7 /* CodeIDESupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeIDESupport.h; sourceTree = "<group>"; };
 		9FC760401A67791200D1E6E7 /* lang */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lang; sourceTree = "<group>"; };
 		9FC760411A67791200D1E6E7 /* SimpleConfigParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleConfigParser.cpp; sourceTree = "<group>"; };
@@ -370,18 +377,46 @@
 			name = Icons;
 			sourceTree = "<group>";
 		};
+		7E7714F21B623FAB00CEBED3 /* tolua */ = {
+			isa = PBXGroup;
+			children = (
+				7E7714F31B623FAB00CEBED3 /* lua_my_base_auto.cpp */,
+				7E7714F41B623FAB00CEBED3 /* lua_my_base_auto.hpp */,
+			);
+			path = tolua;
+			sourceTree = "<group>";
+		};
+		7E7714F61B62400D00CEBED3 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				7E7714F71B62400D00CEBED3 /* MyMap.cpp */,
+				7E7714F81B62400D00CEBED3 /* MyMap.h */,
+				7E7714F91B62400D00CEBED3 /* MyVector.cpp */,
+				7E7714FA1B62400D00CEBED3 /* MyVector.h */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		7E7715001B62524000CEBED3 /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				7E7715011B62524000CEBED3 /* MyAsyncTaskManager.cpp */,
+				7E7715021B62524000CEBED3 /* MyAsyncTaskManager.h */,
+				7E7715031B62524000CEBED3 /* MyDataManager.cpp */,
+				7E7715041B62524000CEBED3 /* MyDataManager.h */,
+				7E7715051B62524000CEBED3 /* MyScriptManager.cpp */,
+				7E7715061B62524000CEBED3 /* MyScriptManager.h */,
+			);
+			path = manager;
+			sourceTree = "<group>";
+		};
 		7E7775D41B5CB2C300D43C0B /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
-				7E7714CB1B60FA9600CEBED3 /* MyVector.h */,
-				7EFCD1771B5E4E9D00D81D5F /* MyMap.h */,
-				7E7775D51B5CB2C300D43C0B /* MyScriptManager.cpp */,
-				7E7775D61B5CB2C300D43C0B /* MyScriptManager.h */,
+				7E7715001B62524000CEBED3 /* manager */,
+				7E7714F61B62400D00CEBED3 /* base */,
+				7E7714F21B623FAB00CEBED3 /* tolua */,
 				7E7775D81B5CCF6200D43C0B /* MyMacros.h */,
-				7E7775D91B5CD26900D43C0B /* MyAsyncTask.cpp */,
-				7E7775DA1B5CD26900D43C0B /* MyAsyncTask.h */,
-				7E7775DC1B5CD27A00D43C0B /* MyAsyncTaskManager.cpp */,
-				7E7775DD1B5CD27A00D43C0B /* MyAsyncTaskManager.h */,
 			);
 			name = MyLib;
 			path = ../Classes/MyLib;
@@ -712,16 +747,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E7715071B62524000CEBED3 /* MyAsyncTaskManager.cpp in Sources */,
+				7E7715081B62524000CEBED3 /* MyDataManager.cpp in Sources */,
+				7E7715091B62524000CEBED3 /* MyScriptManager.cpp in Sources */,
 				9FC760451A677A4A00D1E6E7 /* SimpleConfigParser.cpp in Sources */,
 				5023812517EBBCAC00990C9B /* RootViewController.mm in Sources */,
-				7E7775DB1B5CD26900D43C0B /* MyAsyncTask.cpp in Sources */,
-				7E7775D71B5CB2C300D43C0B /* MyScriptManager.cpp in Sources */,
 				F293BB9C15EB831F00256477 /* AppDelegate.cpp in Sources */,
 				9FFE009F1ACCF59E00D6E35A /* lua_debugger.c in Sources */,
+				7E7714FB1B62400D00CEBED3 /* MyMap.cpp in Sources */,
+				7E7714F51B623FAB00CEBED3 /* lua_my_base_auto.cpp in Sources */,
+				7E7714FC1B62400D00CEBED3 /* MyVector.cpp in Sources */,
 				5023812417EBBCAC00990C9B /* main.m in Sources */,
 				9FFE00A11ACCF59E00D6E35A /* RuntimeLuaImpl.cpp in Sources */,
 				5023811817EBBCAC00990C9B /* AppController.mm in Sources */,
-				7E7775DE1B5CD27A00D43C0B /* MyAsyncTaskManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

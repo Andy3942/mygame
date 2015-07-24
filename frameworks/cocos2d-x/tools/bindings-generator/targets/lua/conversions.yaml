@@ -27,6 +27,8 @@ conversions:
     "cocostudio::": "ccs."
     "cocosbuilder::": "cc."
     "CocosDenshion::": "cc."
+    #add my namespace
+    "my::": "my."
 
   to_native:
     # lua to native

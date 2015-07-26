@@ -8,30 +8,38 @@
 
 #include "MyVector.h"
 
-my::Vector::~Vector()
+NS_MY_BEGIN
+
+Vector::~Vector()
 {
 }
     
-my::Vector* my::Vector::create()
+Vector* Vector::create()
 {
     auto ret = new(std::nothrow) Vector();
     return ret;
 }
 
-ssize_t my::Vector::size() const
+ssize_t Vector::size() const
 {
     return  _data.size();
 }
 
-void my::Vector::pushBack(Value v)
+void Vector::pushBack(Value v)
 {
+    _lock.lock();
     // CCASSERT(object != nullptr, "The object should not be nullptr");
     _data.push_back( v );
     // object->retain();
+    _lock.unlock();
 }
 
-Value my::Vector::at(ssize_t index) const
+Value Vector::at(ssize_t index)
 {
+    _lock.lock();
     CCASSERT( index >= 0 && index < size(), "index out of range in getObjectAtIndex()");
+    _lock.unlock();
     return _data[index];
 }
+
+NS_MY_END

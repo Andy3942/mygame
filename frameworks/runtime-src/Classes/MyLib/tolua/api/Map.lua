@@ -9,14 +9,14 @@
 -- @function [parent=#Map] insert 
 -- @param self
 -- @param #string key
--- @param #cc.Value object
+-- @param #my.Value object
 -- @return Map#Map self (return value: my.Map)
         
 --------------------------------
 -- 
 -- @function [parent=#Map] erase 
 -- @param self
--- @param #string k
+-- @param #string key
 -- @return unsigned long#unsigned long ret (return value: unsigned long)
         
 --------------------------------
@@ -24,7 +24,7 @@
 -- @function [parent=#Map] at 
 -- @param self
 -- @param #string key
--- @return Value#Value ret (return value: cc.Value)
+-- @return Value#Value ret (return value: my.Value)
         
 --------------------------------
 -- 

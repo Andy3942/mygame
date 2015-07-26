@@ -5,7 +5,6 @@
 local M = {}
 package.seeall(M)
 setfenv(1, M)
-
 NetStatus = {
 	CONNECTED = 1,
 	CLOSED    = 2,

@@ -9,13 +9,13 @@
 -- @function [parent=#Vector] at 
 -- @param self
 -- @param #long index
--- @return Value#Value ret (return value: cc.Value)
+-- @return Value#Value ret (return value: my.Value)
         
 --------------------------------
 -- 
 -- @function [parent=#Vector] pushBack 
 -- @param self
--- @param #cc.Value v
+-- @param #my.Value v
 -- @return Vector#Vector self (return value: my.Vector)
         
 --------------------------------

@@ -8,7 +8,7 @@
 
 #include "MyAsyncTaskManager.h"
 
-USING_NS_MY;
+NS_MY_BEGIN
 
 AsyncTaskManager* AsyncTaskManager::getInstance()
 {
@@ -20,3 +20,5 @@ void AsyncTaskManager::addAsyncTask(AsyncTask* async_task, int thread_id)
 {
     _threads.insert(std::pair<int, AsyncTask*>(thread_id, async_task));
 }
+
+NS_MY_END

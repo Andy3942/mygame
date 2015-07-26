@@ -26,7 +26,7 @@
 #include "cocos2d.h"
 #include "lua_module_register.h"
 
-#include "lua_my_base_auto.hpp"
+#include "lua_my.h"
 
 #include "MyMap.h"
 
@@ -80,7 +80,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     ScriptEngineManager::getInstance()->setScriptEngine(engine);
     lua_State* L = engine->getLuaStack()->getLuaState();
     lua_module_register(L);
-    register_all_my_base(L);
+    register_all_my(L);
 
     register_all_packages();
 
@@ -97,23 +97,11 @@ bool AppDelegate::applicationDidFinishLaunching()
     runtimeEngine->addRuntime(RuntimeLuaImpl::create(), kRuntimeEngineLua);
     runtimeEngine->start();
 #else
-
-
-//    if (engine->executeScriptFile("src/main.lua"))
-//    {
-//        //return false;
-//    }
-#endif
-
-    my::ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test2.lua", 1);
-
-    my::ScriptManager::getInstance()->asyncExecuteScriptFile("src/my/test/test1.lua", 2);
-
     if (engine->executeScriptFile("src/main.lua"))
     {
-        //return false;
+        return false;
     }
-    cout<<"Main Thread"<<endl;
+#endif
 
     return true;
 }

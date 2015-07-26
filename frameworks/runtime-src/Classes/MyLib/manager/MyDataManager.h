@@ -11,7 +11,8 @@
 
 #include <stdio.h>
 
-#include "MyMacros.h"
+#include "cocos2d.h"
+
 #include "MyMap.h"
 
 NS_MY_BEGIN

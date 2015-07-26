@@ -97,7 +97,7 @@ public:
     
     /**
      * Construct a LuaValue object by a int value.
-     *x
+     *
      * @param intValue a int value.
      * @return a LuaValue object.
      */

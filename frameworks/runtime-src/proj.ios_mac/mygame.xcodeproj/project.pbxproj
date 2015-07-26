@@ -49,12 +49,27 @@
 		5200BECA1A53D9A500AC45E4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5200BEC91A53D9A500AC45E4 /* Security.framework */; };
 		521A8E7019F0C3D200D177D7 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6E19F0C3D200D177D7 /* Default-667h@2x.png */; };
 		521A8E7119F0C3D200D177D7 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6F19F0C3D200D177D7 /* Default-736h@3x.png */; };
-		7E7714F51B623FAB00CEBED3 /* lua_my_base_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E7714F31B623FAB00CEBED3 /* lua_my_base_auto.cpp */; };
-		7E7714FB1B62400D00CEBED3 /* MyMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E7714F71B62400D00CEBED3 /* MyMap.cpp */; };
-		7E7714FC1B62400D00CEBED3 /* MyVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E7714F91B62400D00CEBED3 /* MyVector.cpp */; };
-		7E7715071B62524000CEBED3 /* MyAsyncTaskManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E7715011B62524000CEBED3 /* MyAsyncTaskManager.cpp */; };
-		7E7715081B62524000CEBED3 /* MyDataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E7715031B62524000CEBED3 /* MyDataManager.cpp */; };
-		7E7715091B62524000CEBED3 /* MyScriptManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E7715051B62524000CEBED3 /* MyScriptManager.cpp */; };
+		7E8648711B64BCDC006AE7E9 /* MyAsyncTask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E8648491B64BCDC006AE7E9 /* MyAsyncTask.cpp */; };
+		7E8648721B64BCDC006AE7E9 /* MyFunction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E86484B1B64BCDC006AE7E9 /* MyFunction.cpp */; };
+		7E8648731B64BCDC006AE7E9 /* MyLuaBasicConversions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E86484D1B64BCDC006AE7E9 /* MyLuaBasicConversions.cpp */; };
+		7E8648741B64BCDC006AE7E9 /* MyMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E86484F1B64BCDC006AE7E9 /* MyMap.cpp */; };
+		7E8648751B64BCDC006AE7E9 /* MyValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E8648511B64BCDC006AE7E9 /* MyValue.cpp */; };
+		7E8648761B64BCDC006AE7E9 /* MyVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E8648531B64BCDC006AE7E9 /* MyVector.cpp */; };
+		7E8648771B64BCDC006AE7E9 /* MyAsyncTaskManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E8648561B64BCDC006AE7E9 /* MyAsyncTaskManager.cpp */; };
+		7E8648781B64BCDC006AE7E9 /* MyDataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E8648581B64BCDC006AE7E9 /* MyDataManager.cpp */; };
+		7E8648791B64BCDC006AE7E9 /* MyScriptManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E86485A1B64BCDC006AE7E9 /* MyScriptManager.cpp */; };
+		7E86487A1B64BCDC006AE7E9 /* MyCommonField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E86485C1B64BCDC006AE7E9 /* MyCommonField.cpp */; };
+		7E86487B1B64BCDC006AE7E9 /* MyCommonFunction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E86485E1B64BCDC006AE7E9 /* MyCommonFunction.cpp */; };
+		7E86487C1B64BCDC006AE7E9 /* DataManager.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7E8648631B64BCDC006AE7E9 /* DataManager.lua */; };
+		7E86487D1B64BCDC006AE7E9 /* lua_my_base_auto_api.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7E8648641B64BCDC006AE7E9 /* lua_my_base_auto_api.lua */; };
+		7E86487E1B64BCDC006AE7E9 /* lua_my_manager_auto_api.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7E8648651B64BCDC006AE7E9 /* lua_my_manager_auto_api.lua */; };
+		7E86487F1B64BCDC006AE7E9 /* Map.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7E8648661B64BCDC006AE7E9 /* Map.lua */; };
+		7E8648801B64BCDC006AE7E9 /* ScriptManager.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7E8648671B64BCDC006AE7E9 /* ScriptManager.lua */; };
+		7E8648811B64BCDC006AE7E9 /* Vector.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7E8648681B64BCDC006AE7E9 /* Vector.lua */; };
+		7E8648821B64BCDC006AE7E9 /* lua_my.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E8648691B64BCDC006AE7E9 /* lua_my.cpp */; };
+		7E8648831B64BCDC006AE7E9 /* lua_my_base_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E86486B1B64BCDC006AE7E9 /* lua_my_base_auto.cpp */; };
+		7E8648841B64BCDC006AE7E9 /* lua_my_common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E86486D1B64BCDC006AE7E9 /* lua_my_common.cpp */; };
+		7E8648851B64BCDC006AE7E9 /* lua_my_manager_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E86486F1B64BCDC006AE7E9 /* lua_my_manager_auto.cpp */; };
 		9FC760431A67791200D1E6E7 /* lang in Resources */ = {isa = PBXBuildFile; fileRef = 9FC760401A67791200D1E6E7 /* lang */; };
 		9FC760451A677A4A00D1E6E7 /* SimpleConfigParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FC760411A67791200D1E6E7 /* SimpleConfigParser.cpp */; };
 		9FF504841A5E87B100AFDA55 /* ConsoleWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FF504811A5E87B100AFDA55 /* ConsoleWindow.xib */; };
@@ -197,7 +212,7 @@
 		5023811517EBBCAC00990C9B /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		5023811617EBBCAC00990C9B /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		5023811717EBBCAC00990C9B /* RootViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RootViewController.mm; sourceTree = "<group>"; };
-		5023816B17EBBCE400990C9B /* mygame Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mygame Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5023816B17EBBCE400990C9B /* mygame-desktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mygame-desktop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5023817217EBBE3400990C9B /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		5023817317EBBE3400990C9B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5023817517EBBE3400990C9B /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
@@ -215,19 +230,43 @@
 		5200BEC91A53D9A500AC45E4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		521A8E6E19F0C3D200D177D7 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
 		521A8E6F19F0C3D200D177D7 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
-		7E7714F31B623FAB00CEBED3 /* lua_my_base_auto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_my_base_auto.cpp; sourceTree = "<group>"; };
-		7E7714F41B623FAB00CEBED3 /* lua_my_base_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_my_base_auto.hpp; sourceTree = "<group>"; };
-		7E7714F71B62400D00CEBED3 /* MyMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyMap.cpp; sourceTree = "<group>"; };
-		7E7714F81B62400D00CEBED3 /* MyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMap.h; sourceTree = "<group>"; };
-		7E7714F91B62400D00CEBED3 /* MyVector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyVector.cpp; sourceTree = "<group>"; };
-		7E7714FA1B62400D00CEBED3 /* MyVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVector.h; sourceTree = "<group>"; };
-		7E7715011B62524000CEBED3 /* MyAsyncTaskManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyAsyncTaskManager.cpp; sourceTree = "<group>"; };
-		7E7715021B62524000CEBED3 /* MyAsyncTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAsyncTaskManager.h; sourceTree = "<group>"; };
-		7E7715031B62524000CEBED3 /* MyDataManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyDataManager.cpp; sourceTree = "<group>"; };
-		7E7715041B62524000CEBED3 /* MyDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDataManager.h; sourceTree = "<group>"; };
-		7E7715051B62524000CEBED3 /* MyScriptManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyScriptManager.cpp; sourceTree = "<group>"; };
-		7E7715061B62524000CEBED3 /* MyScriptManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScriptManager.h; sourceTree = "<group>"; };
-		7E7775D81B5CCF6200D43C0B /* MyMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyMacros.h; sourceTree = "<group>"; };
+		7E8648491B64BCDC006AE7E9 /* MyAsyncTask.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyAsyncTask.cpp; sourceTree = "<group>"; };
+		7E86484A1B64BCDC006AE7E9 /* MyAsyncTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAsyncTask.h; sourceTree = "<group>"; };
+		7E86484B1B64BCDC006AE7E9 /* MyFunction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyFunction.cpp; sourceTree = "<group>"; };
+		7E86484C1B64BCDC006AE7E9 /* MyFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFunction.h; sourceTree = "<group>"; };
+		7E86484D1B64BCDC006AE7E9 /* MyLuaBasicConversions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyLuaBasicConversions.cpp; sourceTree = "<group>"; };
+		7E86484E1B64BCDC006AE7E9 /* MyLuaBasicConversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLuaBasicConversions.h; sourceTree = "<group>"; };
+		7E86484F1B64BCDC006AE7E9 /* MyMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyMap.cpp; sourceTree = "<group>"; };
+		7E8648501B64BCDC006AE7E9 /* MyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMap.h; sourceTree = "<group>"; };
+		7E8648511B64BCDC006AE7E9 /* MyValue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyValue.cpp; sourceTree = "<group>"; };
+		7E8648521B64BCDC006AE7E9 /* MyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyValue.h; sourceTree = "<group>"; };
+		7E8648531B64BCDC006AE7E9 /* MyVector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyVector.cpp; sourceTree = "<group>"; };
+		7E8648541B64BCDC006AE7E9 /* MyVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVector.h; sourceTree = "<group>"; };
+		7E8648561B64BCDC006AE7E9 /* MyAsyncTaskManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyAsyncTaskManager.cpp; sourceTree = "<group>"; };
+		7E8648571B64BCDC006AE7E9 /* MyAsyncTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAsyncTaskManager.h; sourceTree = "<group>"; };
+		7E8648581B64BCDC006AE7E9 /* MyDataManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyDataManager.cpp; sourceTree = "<group>"; };
+		7E8648591B64BCDC006AE7E9 /* MyDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDataManager.h; sourceTree = "<group>"; };
+		7E86485A1B64BCDC006AE7E9 /* MyScriptManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyScriptManager.cpp; sourceTree = "<group>"; };
+		7E86485B1B64BCDC006AE7E9 /* MyScriptManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScriptManager.h; sourceTree = "<group>"; };
+		7E86485C1B64BCDC006AE7E9 /* MyCommonField.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyCommonField.cpp; sourceTree = "<group>"; };
+		7E86485D1B64BCDC006AE7E9 /* MyCommonField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCommonField.h; sourceTree = "<group>"; };
+		7E86485E1B64BCDC006AE7E9 /* MyCommonFunction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyCommonFunction.cpp; sourceTree = "<group>"; };
+		7E86485F1B64BCDC006AE7E9 /* MyCommonFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCommonFunction.h; sourceTree = "<group>"; };
+		7E8648601B64BCDC006AE7E9 /* MyMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMacros.h; sourceTree = "<group>"; };
+		7E8648631B64BCDC006AE7E9 /* DataManager.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DataManager.lua; sourceTree = "<group>"; };
+		7E8648641B64BCDC006AE7E9 /* lua_my_base_auto_api.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lua_my_base_auto_api.lua; sourceTree = "<group>"; };
+		7E8648651B64BCDC006AE7E9 /* lua_my_manager_auto_api.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lua_my_manager_auto_api.lua; sourceTree = "<group>"; };
+		7E8648661B64BCDC006AE7E9 /* Map.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Map.lua; sourceTree = "<group>"; };
+		7E8648671B64BCDC006AE7E9 /* ScriptManager.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ScriptManager.lua; sourceTree = "<group>"; };
+		7E8648681B64BCDC006AE7E9 /* Vector.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vector.lua; sourceTree = "<group>"; };
+		7E8648691B64BCDC006AE7E9 /* lua_my.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_my.cpp; sourceTree = "<group>"; };
+		7E86486A1B64BCDC006AE7E9 /* lua_my.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_my.h; sourceTree = "<group>"; };
+		7E86486B1B64BCDC006AE7E9 /* lua_my_base_auto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_my_base_auto.cpp; sourceTree = "<group>"; };
+		7E86486C1B64BCDC006AE7E9 /* lua_my_base_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_my_base_auto.hpp; sourceTree = "<group>"; };
+		7E86486D1B64BCDC006AE7E9 /* lua_my_common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_my_common.cpp; sourceTree = "<group>"; };
+		7E86486E1B64BCDC006AE7E9 /* lua_my_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_my_common.h; sourceTree = "<group>"; };
+		7E86486F1B64BCDC006AE7E9 /* lua_my_manager_auto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_my_manager_auto.cpp; sourceTree = "<group>"; };
+		7E8648701B64BCDC006AE7E9 /* lua_my_manager_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_my_manager_auto.hpp; sourceTree = "<group>"; };
 		9FC7603F1A67791200D1E6E7 /* CodeIDESupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeIDESupport.h; sourceTree = "<group>"; };
 		9FC760401A67791200D1E6E7 /* lang */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lang; sourceTree = "<group>"; };
 		9FC760411A67791200D1E6E7 /* SimpleConfigParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleConfigParser.cpp; sourceTree = "<group>"; };
@@ -251,7 +290,7 @@
 		C07828F718B4D72E00BD2287 /* SimulatorApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SimulatorApp.mm; sourceTree = "<group>"; };
 		D6B061341803AC000077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		DA9E7D871AB1ABCC004B27C8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		F293B3C815EB7BE500256477 /* mygame iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mygame iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F293B3C815EB7BE500256477 /* mygame-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mygame-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F293B3CC15EB7BE500256477 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F293B3CE15EB7BE500256477 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		F293B3D015EB7BE500256477 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -377,49 +416,81 @@
 			name = Icons;
 			sourceTree = "<group>";
 		};
-		7E7714F21B623FAB00CEBED3 /* tolua */ = {
+		7E8648471B64BCDC006AE7E9 /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
-				7E7714F31B623FAB00CEBED3 /* lua_my_base_auto.cpp */,
-				7E7714F41B623FAB00CEBED3 /* lua_my_base_auto.hpp */,
+				7E8648481B64BCDC006AE7E9 /* base */,
+				7E8648551B64BCDC006AE7E9 /* manager */,
+				7E86485C1B64BCDC006AE7E9 /* MyCommonField.cpp */,
+				7E86485D1B64BCDC006AE7E9 /* MyCommonField.h */,
+				7E86485E1B64BCDC006AE7E9 /* MyCommonFunction.cpp */,
+				7E86485F1B64BCDC006AE7E9 /* MyCommonFunction.h */,
+				7E8648601B64BCDC006AE7E9 /* MyMacros.h */,
+				7E8648611B64BCDC006AE7E9 /* tolua */,
 			);
-			path = tolua;
+			name = MyLib;
+			path = ../Classes/MyLib;
 			sourceTree = "<group>";
 		};
-		7E7714F61B62400D00CEBED3 /* base */ = {
+		7E8648481B64BCDC006AE7E9 /* base */ = {
 			isa = PBXGroup;
 			children = (
-				7E7714F71B62400D00CEBED3 /* MyMap.cpp */,
-				7E7714F81B62400D00CEBED3 /* MyMap.h */,
-				7E7714F91B62400D00CEBED3 /* MyVector.cpp */,
-				7E7714FA1B62400D00CEBED3 /* MyVector.h */,
+				7E8648491B64BCDC006AE7E9 /* MyAsyncTask.cpp */,
+				7E86484A1B64BCDC006AE7E9 /* MyAsyncTask.h */,
+				7E86484B1B64BCDC006AE7E9 /* MyFunction.cpp */,
+				7E86484C1B64BCDC006AE7E9 /* MyFunction.h */,
+				7E86484D1B64BCDC006AE7E9 /* MyLuaBasicConversions.cpp */,
+				7E86484E1B64BCDC006AE7E9 /* MyLuaBasicConversions.h */,
+				7E86484F1B64BCDC006AE7E9 /* MyMap.cpp */,
+				7E8648501B64BCDC006AE7E9 /* MyMap.h */,
+				7E8648511B64BCDC006AE7E9 /* MyValue.cpp */,
+				7E8648521B64BCDC006AE7E9 /* MyValue.h */,
+				7E8648531B64BCDC006AE7E9 /* MyVector.cpp */,
+				7E8648541B64BCDC006AE7E9 /* MyVector.h */,
 			);
 			path = base;
 			sourceTree = "<group>";
 		};
-		7E7715001B62524000CEBED3 /* manager */ = {
+		7E8648551B64BCDC006AE7E9 /* manager */ = {
 			isa = PBXGroup;
 			children = (
-				7E7715011B62524000CEBED3 /* MyAsyncTaskManager.cpp */,
-				7E7715021B62524000CEBED3 /* MyAsyncTaskManager.h */,
-				7E7715031B62524000CEBED3 /* MyDataManager.cpp */,
-				7E7715041B62524000CEBED3 /* MyDataManager.h */,
-				7E7715051B62524000CEBED3 /* MyScriptManager.cpp */,
-				7E7715061B62524000CEBED3 /* MyScriptManager.h */,
+				7E8648561B64BCDC006AE7E9 /* MyAsyncTaskManager.cpp */,
+				7E8648571B64BCDC006AE7E9 /* MyAsyncTaskManager.h */,
+				7E8648581B64BCDC006AE7E9 /* MyDataManager.cpp */,
+				7E8648591B64BCDC006AE7E9 /* MyDataManager.h */,
+				7E86485A1B64BCDC006AE7E9 /* MyScriptManager.cpp */,
+				7E86485B1B64BCDC006AE7E9 /* MyScriptManager.h */,
 			);
 			path = manager;
 			sourceTree = "<group>";
 		};
-		7E7775D41B5CB2C300D43C0B /* MyLib */ = {
+		7E8648611B64BCDC006AE7E9 /* tolua */ = {
 			isa = PBXGroup;
 			children = (
-				7E7715001B62524000CEBED3 /* manager */,
-				7E7714F61B62400D00CEBED3 /* base */,
-				7E7714F21B623FAB00CEBED3 /* tolua */,
-				7E7775D81B5CCF6200D43C0B /* MyMacros.h */,
+				7E8648621B64BCDC006AE7E9 /* api */,
+				7E8648691B64BCDC006AE7E9 /* lua_my.cpp */,
+				7E86486A1B64BCDC006AE7E9 /* lua_my.h */,
+				7E86486B1B64BCDC006AE7E9 /* lua_my_base_auto.cpp */,
+				7E86486C1B64BCDC006AE7E9 /* lua_my_base_auto.hpp */,
+				7E86486D1B64BCDC006AE7E9 /* lua_my_common.cpp */,
+				7E86486E1B64BCDC006AE7E9 /* lua_my_common.h */,
+				7E86486F1B64BCDC006AE7E9 /* lua_my_manager_auto.cpp */,
+				7E8648701B64BCDC006AE7E9 /* lua_my_manager_auto.hpp */,
 			);
-			name = MyLib;
-			path = ../Classes/MyLib;
+			path = tolua;
+			sourceTree = "<group>";
+		};
+		7E8648621B64BCDC006AE7E9 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				7E8648631B64BCDC006AE7E9 /* DataManager.lua */,
+				7E8648641B64BCDC006AE7E9 /* lua_my_base_auto_api.lua */,
+				7E8648651B64BCDC006AE7E9 /* lua_my_manager_auto_api.lua */,
+				7E8648661B64BCDC006AE7E9 /* Map.lua */,
+				7E8648671B64BCDC006AE7E9 /* ScriptManager.lua */,
+				7E8648681B64BCDC006AE7E9 /* Vector.lua */,
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 		9FC7603E1A67791200D1E6E7 /* ide-support */ = {
@@ -474,8 +545,8 @@
 		F293B3C915EB7BE500256477 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F293B3C815EB7BE500256477 /* mygame iOS.app */,
-				5023816B17EBBCE400990C9B /* mygame Mac.app */,
+				F293B3C815EB7BE500256477 /* mygame-mobile.app */,
+				5023816B17EBBCE400990C9B /* mygame-desktop.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -511,7 +582,7 @@
 		F293BB7C15EB830F00256477 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				7E7775D41B5CB2C300D43C0B /* MyLib */,
+				7E8648471B64BCDC006AE7E9 /* MyLib */,
 				9FC7603E1A67791200D1E6E7 /* ide-support */,
 				15427CE2198F237300DC375D /* lua_module_register.h */,
 				F293BB7E15EB831F00256477 /* AppDelegate.cpp */,
@@ -534,9 +605,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5023812617EBBCE400990C9B /* mygame Mac */ = {
+		5023812617EBBCE400990C9B /* mygame-desktop */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5023816817EBBCE400990C9B /* Build configuration list for PBXNativeTarget "mygame Mac" */;
+			buildConfigurationList = 5023816817EBBCE400990C9B /* Build configuration list for PBXNativeTarget "mygame-desktop" */;
 			buildPhases = (
 				5023813117EBBCE400990C9B /* Sources */,
 				5023813617EBBCE400990C9B /* Frameworks */,
@@ -550,14 +621,14 @@
 				152A34B9199CE758004B68DC /* PBXTargetDependency */,
 				C0A2F04118975FF80072A7AB /* PBXTargetDependency */,
 			);
-			name = "mygame Mac";
+			name = "mygame-desktop";
 			productName = mygame;
-			productReference = 5023816B17EBBCE400990C9B /* mygame Mac.app */;
+			productReference = 5023816B17EBBCE400990C9B /* mygame-desktop.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F293B3C715EB7BE500256477 /* mygame iOS */ = {
+		F293B3C715EB7BE500256477 /* mygame-mobile */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F293B6C415EB7BEA00256477 /* Build configuration list for PBXNativeTarget "mygame iOS" */;
+			buildConfigurationList = F293B6C415EB7BEA00256477 /* Build configuration list for PBXNativeTarget "mygame-mobile" */;
 			buildPhases = (
 				F293B3C415EB7BE500256477 /* Sources */,
 				F293B3C515EB7BE500256477 /* Frameworks */,
@@ -571,9 +642,9 @@
 				152A349F199CE72E004B68DC /* PBXTargetDependency */,
 				15D1F3091994BBCA00302043 /* PBXTargetDependency */,
 			);
-			name = "mygame iOS";
+			name = "mygame-mobile";
 			productName = mygame;
-			productReference = F293B3C815EB7BE500256477 /* mygame iOS.app */;
+			productReference = F293B3C815EB7BE500256477 /* mygame-mobile.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -617,8 +688,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				F293B3C715EB7BE500256477 /* mygame iOS */,
-				5023812617EBBCE400990C9B /* mygame Mac */,
+				F293B3C715EB7BE500256477 /* mygame-mobile */,
+				5023812617EBBCE400990C9B /* mygame-desktop */,
 			);
 		};
 /* End PBXProject section */
@@ -691,19 +762,25 @@
 				5023811D17EBBCAC00990C9B /* Icon-120.png in Resources */,
 				5091733B17ECE17A00D62437 /* Icon-100.png in Resources */,
 				5023811B17EBBCAC00990C9B /* Default@2x.png in Resources */,
+				7E8648811B64BCDC006AE7E9 /* Vector.lua in Resources */,
 				5091733617ECE17A00D62437 /* Icon-29.png in Resources */,
 				5023811917EBBCAC00990C9B /* Default-568h@2x.png in Resources */,
 				5091733917ECE17A00D62437 /* Icon-58.png in Resources */,
 				5023811F17EBBCAC00990C9B /* Icon-152.png in Resources */,
 				5023812017EBBCAC00990C9B /* Icon-57.png in Resources */,
 				521A8E7019F0C3D200D177D7 /* Default-667h@2x.png in Resources */,
+				7E86487C1B64BCDC006AE7E9 /* DataManager.lua in Resources */,
 				C03781B918BF655400FE4F13 /* res in Resources */,
 				5023812217EBBCAC00990C9B /* Icon-76.png in Resources */,
+				7E8648801B64BCDC006AE7E9 /* ScriptManager.lua in Resources */,
+				7E86487E1B64BCDC006AE7E9 /* lua_my_manager_auto_api.lua in Resources */,
 				5091733A17ECE17A00D62437 /* Icon-80.png in Resources */,
 				5091733717ECE17A00D62437 /* Icon-40.png in Resources */,
+				7E86487D1B64BCDC006AE7E9 /* lua_my_base_auto_api.lua in Resources */,
 				5023811E17EBBCAC00990C9B /* Icon-144.png in Resources */,
 				5023811A17EBBCAC00990C9B /* Default.png in Resources */,
 				C03781BB18BF655400FE4F13 /* src in Resources */,
+				7E86487F1B64BCDC006AE7E9 /* Map.lua in Resources */,
 				5091733817ECE17A00D62437 /* Icon-50.png in Resources */,
 				5023812117EBBCAC00990C9B /* Icon-72.png in Resources */,
 				C05D1C121923449100B808A4 /* config.json in Resources */,
@@ -747,19 +824,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E7715071B62524000CEBED3 /* MyAsyncTaskManager.cpp in Sources */,
-				7E7715081B62524000CEBED3 /* MyDataManager.cpp in Sources */,
-				7E7715091B62524000CEBED3 /* MyScriptManager.cpp in Sources */,
+				7E8648721B64BCDC006AE7E9 /* MyFunction.cpp in Sources */,
+				7E8648781B64BCDC006AE7E9 /* MyDataManager.cpp in Sources */,
+				7E8648731B64BCDC006AE7E9 /* MyLuaBasicConversions.cpp in Sources */,
 				9FC760451A677A4A00D1E6E7 /* SimpleConfigParser.cpp in Sources */,
+				7E8648771B64BCDC006AE7E9 /* MyAsyncTaskManager.cpp in Sources */,
+				7E8648851B64BCDC006AE7E9 /* lua_my_manager_auto.cpp in Sources */,
+				7E8648821B64BCDC006AE7E9 /* lua_my.cpp in Sources */,
+				7E8648741B64BCDC006AE7E9 /* MyMap.cpp in Sources */,
+				7E86487B1B64BCDC006AE7E9 /* MyCommonFunction.cpp in Sources */,
 				5023812517EBBCAC00990C9B /* RootViewController.mm in Sources */,
 				F293BB9C15EB831F00256477 /* AppDelegate.cpp in Sources */,
 				9FFE009F1ACCF59E00D6E35A /* lua_debugger.c in Sources */,
-				7E7714FB1B62400D00CEBED3 /* MyMap.cpp in Sources */,
-				7E7714F51B623FAB00CEBED3 /* lua_my_base_auto.cpp in Sources */,
-				7E7714FC1B62400D00CEBED3 /* MyVector.cpp in Sources */,
 				5023812417EBBCAC00990C9B /* main.m in Sources */,
+				7E8648791B64BCDC006AE7E9 /* MyScriptManager.cpp in Sources */,
+				7E8648761B64BCDC006AE7E9 /* MyVector.cpp in Sources */,
+				7E86487A1B64BCDC006AE7E9 /* MyCommonField.cpp in Sources */,
 				9FFE00A11ACCF59E00D6E35A /* RuntimeLuaImpl.cpp in Sources */,
+				7E8648841B64BCDC006AE7E9 /* lua_my_common.cpp in Sources */,
 				5023811817EBBCAC00990C9B /* AppController.mm in Sources */,
+				7E8648711B64BCDC006AE7E9 /* MyAsyncTask.cpp in Sources */,
+				7E8648831B64BCDC006AE7E9 /* lua_my_base_auto.cpp in Sources */,
+				7E8648751B64BCDC006AE7E9 /* MyValue.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,6 +987,7 @@
 					USE_FILE32API,
 					"CC_LUA_ENGINE_ENABLED=1",
 					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
+					"CC_ENABLE_BULLET_INTEGRATION=1",
 					GLFW_EXPOSE_NATIVE_COCOA,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -924,6 +1011,7 @@
 					USE_FILE32API,
 					"CC_LUA_ENGINE_ENABLED=1",
 					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
+					"CC_ENABLE_BULLET_INTEGRATION=1",
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -1019,7 +1107,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5023816817EBBCE400990C9B /* Build configuration list for PBXNativeTarget "mygame Mac" */ = {
+		5023816817EBBCE400990C9B /* Build configuration list for PBXNativeTarget "mygame-desktop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5023816917EBBCE400990C9B /* Debug */,
@@ -1037,7 +1125,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F293B6C415EB7BEA00256477 /* Build configuration list for PBXNativeTarget "mygame iOS" */ = {
+		F293B6C415EB7BEA00256477 /* Build configuration list for PBXNativeTarget "mygame-mobile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F293B6C515EB7BEA00256477 /* Debug */,

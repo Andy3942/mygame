@@ -15,22 +15,22 @@
 
 #include "cocos2d.h"
 #include "MyMacros.h"
-
-USING_NS_CC;
+#include "MyValue.h"
 
 NS_MY_BEGIN
 
-class Vector:public Ref
+class Vector:public cocos2d::Ref
 {
 public:
     virtual ~Vector();
     
     static Vector* create();
      ssize_t size() const;
-    void pushBack(Value v);
-    Value at(ssize_t index) const;
+    void pushBack(MyValue v);
+    MyValue at(ssize_t index);
 private:
-    std::vector<Value> _data;
+    std::vector<MyValue> _data;
+    std::mutex _lock;
 };
 
 NS_MY_END

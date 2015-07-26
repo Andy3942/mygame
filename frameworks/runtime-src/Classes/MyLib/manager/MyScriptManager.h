@@ -10,10 +10,9 @@
 #define __mygame__MyScriptManager__
 
 #include <stdio.h>
-#include <CCValue.h>
 
+#include "cocos2d.h"
 #include "MyMacros.h"
-#include "CCLuaStack.h"
 
 USING_NS_CC;
 

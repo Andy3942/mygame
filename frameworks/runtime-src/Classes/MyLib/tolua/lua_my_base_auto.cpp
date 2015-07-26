@@ -3,6 +3,7 @@
 #include "MyVector.h"
 #include "tolua_fix.h"
 #include "LuaBasicConversions.h"
+#include "MyLuaBasicConversions.h"
 
 
 
@@ -35,11 +36,11 @@ int lua_my_base_Map_insert(lua_State* tolua_S)
     if (argc == 2) 
     {
         std::string arg0;
-        cocos2d::Value arg1;
+        my::MyValue arg1;
 
         ok &= luaval_to_std_string(tolua_S, 2,&arg0, "my.Map:insert");
 
-        ok &= luaval_to_ccvalue(tolua_S, 3, &arg1, "my.Map:insert");
+        ok &= luaval_to_myvalue(tolua_S, 3, &arg1, "my.Map:insert");
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_my_base_Map_insert'", nullptr);
@@ -145,8 +146,8 @@ int lua_my_base_Map_at(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_my_base_Map_at'", nullptr);
             return 0;
         }
-        cocos2d::Value ret = cobj->at(arg0);
-        ccvalue_to_luaval(tolua_S, ret);
+        my::MyValue ret = cobj->at(arg0);
+        myvalue_to_luaval(tolua_S, ret);
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "my.Map:at",argc, 1);
@@ -290,8 +291,8 @@ int lua_my_base_Vector_at(lua_State* tolua_S)
             tolua_error(tolua_S,"invalid arguments in function 'lua_my_base_Vector_at'", nullptr);
             return 0;
         }
-        cocos2d::Value ret = cobj->at(arg0);
-        ccvalue_to_luaval(tolua_S, ret);
+        my::MyValue ret = cobj->at(arg0);
+        myvalue_to_luaval(tolua_S, ret);
         return 1;
     }
     luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "my.Vector:at",argc, 1);
@@ -332,9 +333,9 @@ int lua_my_base_Vector_pushBack(lua_State* tolua_S)
     argc = lua_gettop(tolua_S)-1;
     if (argc == 1) 
     {
-        cocos2d::Value arg0;
+        my::MyValue arg0;
 
-        ok &= luaval_to_ccvalue(tolua_S, 2, &arg0, "my.Vector:pushBack");
+        ok &= luaval_to_myvalue(tolua_S, 2, &arg0, "my.Vector:pushBack");
         if(!ok)
         {
             tolua_error(tolua_S,"invalid arguments in function 'lua_my_base_Vector_pushBack'", nullptr);

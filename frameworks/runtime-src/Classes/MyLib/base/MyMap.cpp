@@ -8,47 +8,59 @@
 
 #include "MyMap.h"
 
-USING_NS_MY;
+NS_MY_BEGIN
 
-my::Map::Map()
+Map::Map()
 {
 }
 
-my::Map::~Map()
+Map::~Map()
 {
 }
 
-my::Map* my::Map::create()
+Map* Map::create()
 {
     auto ret = new(std::nothrow) Map();
     return ret;
 }
 
-Value my::Map::at(const std::string& key)
+Value Map::at(const std::string& key)
 {
+    _lock.lock();
     auto iter = _data.find(key);
     if (iter != _data.end())
+    {
+        _lock.unlock();
         return iter->second;
-    return (Value)0;
+    }
+    _lock.unlock();
+    return (Value)Value::Null;
 }
 
-void my::Map::insert(const std::string& key, Value object)
+void Map::insert(const std::string& key, Value object)
 {
+    _lock.lock();
     //CCASSERT(object != nullptr, "Object is nullptr!");
     //erase(key);
     _data.insert(std::make_pair(key, object));
     //object->retain();
+    _lock.unlock();
+
 }
 
-size_t my::Map::erase(const std::string& k)
+size_t Map::erase(const std::string& k)
+{
+    _lock.lock();
+    auto iter = _data.find(k);
+    if (iter != _data.end())
     {
-        auto iter = _data.find(k);
-        if (iter != _data.end())
-        {
-            //iter->second->release();
-            _data.erase(iter);
-            return 1;
-        }
-        
-        return 0;
+        //iter->second->release();
+        _data.erase(iter);
+        _lock.unlock();
+        return 1;
     }
+    _lock.unlock();
+    return 0;
+}
+
+NS_MY_END

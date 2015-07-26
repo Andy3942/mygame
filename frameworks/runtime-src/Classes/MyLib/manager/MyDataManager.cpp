@@ -7,9 +7,8 @@
 //
 
 #include "MyDataManager.h"
-#include "MyMacros.h"
 
-USING_NS_MY;
+NS_MY_BEGIN
 
 DataManager* DataManager::getInstance()
 {
@@ -19,10 +18,12 @@ DataManager* DataManager::getInstance()
 
 my::Map* DataManager::getShareData()
 {
-    static auto share_data = Map::create();
+    static auto share_data = my::Map::create();
     if(!_share_data)
     {
         _share_data = share_data;
     }
     return _share_data;
 }
+
+NS_MY_END

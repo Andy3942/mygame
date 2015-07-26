@@ -311,13 +311,13 @@ int LuaStack::executeString(const char *codes)
     return executeFunction(0);
 }
 
+static const std::string BYTECODE_FILE_EXT    = ".luac";
+static const std::string NOT_BYTECODE_FILE_EXT = ".lua";
+
 int LuaStack::executeScriptFile(const char* filename)
 {
     CCAssert(filename, "CCLuaStack::executeScriptFile() - invalid filename");
-    
-    static const std::string BYTECODE_FILE_EXT    = ".luac";
-    static const std::string NOT_BYTECODE_FILE_EXT = ".lua";
-    
+   
     std::string buf(filename);
     //
     // remove .lua or .luac
@@ -337,6 +337,7 @@ int LuaStack::executeScriptFile(const char* filename)
     }
     
     FileUtils *utils = FileUtils::getInstance();
+    utils->setPopupNotify(false);
     //
     // 1. check .lua suffix
     // 2. check .luac suffix
@@ -354,8 +355,9 @@ int LuaStack::executeScriptFile(const char* filename)
             buf = tmpfilename;
         }
     }
-    
+
     std::string fullPath = utils->fullPathForFilename(buf);
+    utils->setPopupNotify(true);
     Data data = utils->getDataFromFile(fullPath);
     int rn = 0;
     if (!data.isNull())
@@ -881,11 +883,14 @@ int LuaStack::luaLoadChunksFromZIP(lua_State *L)
                 ssize_t bufferSize = 0;
                 unsigned char *zbuffer = zip->getFileData(filename.c_str(), &bufferSize);
                 if (bufferSize) {
-                    // remove extension
-                    std::size_t found = filename.rfind(".lua");
-                    if (found != std::string::npos)
+                    // remove .lua or .luac extension
+                    size_t pos = filename.find_last_of('.');
+                    if (pos != std::string::npos)
                     {
-                        filename.erase(found);
+                        std::string suffix = filename.substr(pos, filename.length());
+                        if (suffix == NOT_BYTECODE_FILE_EXT || suffix == BYTECODE_FILE_EXT) {
+                            filename.erase(pos);
+                        }
                     }
                     // replace path seperator '/' '\' to '.'
                     for (int i=0; i<filename.size(); i++) {

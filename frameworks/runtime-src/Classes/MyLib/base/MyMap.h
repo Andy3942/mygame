@@ -14,23 +14,23 @@
 
 #include "cocos2d.h"
 #include "MyMacros.h"
-
-USING_NS_CC; 
+#include "MyValue.h"
 
 NS_MY_BEGIN
 
-class Map:public Ref
+class Map:public cocos2d::Ref
 {
 public:
     Map();
     virtual ~Map();
 
     static Map* create();
-    Value at(const std::string& key);
-    void insert(const std::string& key, Value object);
-    size_t erase(const std::string& k);
+    MyValue at(const std::string& key);
+    void insert(const std::string& key, MyValue object);
+    size_t erase(const std::string& key);
 private:
-    std::unordered_map<std::string, Value> _data;
+    std::unordered_map<std::string, MyValue> _data;
+    std::mutex _lock;
 };
 
 NS_MY_END

@@ -17,9 +17,9 @@
 
 #include "MyAsyncTaskManager.h"
 
-#include "lua_my_base_auto.hpp"
+#include "lua_my.h"
 
-USING_NS_MY;
+NS_MY_BEGIN
 
 ScriptManager* ScriptManager::getInstance()
 {
@@ -31,7 +31,7 @@ void ScriptManager::asyncExecuteScriptFile(const char *filename, int thread_id)
 {
     AsyncTask* async_task = new(std::nothrow) AsyncTask();
     auto L = LuaStack::createWithLight();
-    register_all_my_base(L->getLuaState());
+    register_all_my(L->getLuaState());
     L->retain();
     async_task->addTask([L, filename]()
     {
@@ -40,3 +40,5 @@ void ScriptManager::asyncExecuteScriptFile(const char *filename, int thread_id)
     });
     AsyncTaskManager::getInstance()->addAsyncTask(async_task, thread_id);
 }
+
+NS_MY_END

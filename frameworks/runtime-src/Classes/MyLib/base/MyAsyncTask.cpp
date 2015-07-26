@@ -8,7 +8,7 @@
 
 #include "MyAsyncTask.h"
 
-USING_NS_MY;
+NS_MY_BEGIN
 
 AsyncTask::AsyncTask()
 :_stop(false)
@@ -39,3 +39,5 @@ AsyncTask::~AsyncTask()
     _stop = true;
     _thread.join();
 }
+
+NS_MY_END

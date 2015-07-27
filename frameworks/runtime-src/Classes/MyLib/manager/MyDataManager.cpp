@@ -16,7 +16,7 @@ DataManager* DataManager::getInstance()
     return ret;
 }
 
-my::Map* DataManager::getShareData()
+my::Map* DataManager::getSharedData()
 {
     static auto share_data = my::Map::create();
     if(!_share_data)

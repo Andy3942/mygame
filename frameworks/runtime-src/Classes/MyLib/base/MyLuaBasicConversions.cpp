@@ -16,7 +16,10 @@ void myvalue_to_luaval(lua_State* L,const my::Value& inValue)
 {
     const my::Value& obj = inValue;
     switch (obj.getType())
-    {
+    {   
+        case my::Value::Type::NONE:
+            lua_pushnil(L);
+            break;
         case my::Value::Type::BOOLEAN:
             lua_pushboolean(L, obj.asBool());
             break;

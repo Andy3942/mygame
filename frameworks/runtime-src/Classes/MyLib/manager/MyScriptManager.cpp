@@ -33,9 +33,10 @@ void ScriptManager::asyncExecuteScriptFile(const char *filename, int thread_id)
     auto L = LuaStack::createWithLight();
     register_all_my(L->getLuaState());
     L->retain();
-    async_task->addTask([L, filename]()
+    std::string filename_str = filename;
+    async_task->addTask([L, filename_str]()
     {
-        L->executeScriptFile(filename);
+        L->executeScriptFile(filename_str.c_str());
         L->release();
     });
     AsyncTaskManager::getInstance()->addAsyncTask(async_task, thread_id);

@@ -337,7 +337,6 @@ int LuaStack::executeScriptFile(const char* filename)
     }
     
     FileUtils *utils = FileUtils::getInstance();
-    utils->setPopupNotify(false);
     //
     // 1. check .lua suffix
     // 2. check .luac suffix
@@ -357,7 +356,6 @@ int LuaStack::executeScriptFile(const char* filename)
     }
 
     std::string fullPath = utils->fullPathForFilename(buf);
-    utils->setPopupNotify(true);
     Data data = utils->getDataFromFile(fullPath);
     int rn = 0;
     if (!data.isNull())

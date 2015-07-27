@@ -21,7 +21,7 @@ class DataManager
 {
 public:
     static DataManager* getInstance();
-    Map* getShareData();
+    Map* getSharedData();
 private:
     Map* _share_data;
 };

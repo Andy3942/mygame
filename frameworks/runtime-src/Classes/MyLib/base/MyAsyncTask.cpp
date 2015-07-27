@@ -23,7 +23,9 @@ AsyncTask::AsyncTask()
                     std::unique_lock<std::mutex> lock(_queueMutex);
                     if(_tasks.empty())
                     {
+                        printf("线程等待\n");
                         _condition.wait(lock);
+                        printf("线程被唤醒\n");
                     }
                     task = std::move(_tasks.front());
                     _tasks.pop();

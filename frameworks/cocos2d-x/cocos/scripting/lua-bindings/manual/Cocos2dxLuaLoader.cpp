@@ -85,10 +85,8 @@ extern "C"
             
             pos = prefix.find("?.lua");
             chunkName = prefix.substr(0, pos) + filename + BYTECODE_FILE_EXT;
-            utils->setPopupNotify(false);
             if (utils->isFileExist(chunkName))
             {
-                utils->setPopupNotify(true);
                 chunk = utils->getFileData(chunkName.c_str(), "rb", &chunkSize);
                 break;
             }

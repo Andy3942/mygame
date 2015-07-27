@@ -5,7 +5,7 @@
 
 --------------------------------
 -- 
--- @function [parent=#DataManager] getShareData 
+-- @function [parent=#DataManager] getSharedData 
 -- @param self
 -- @return Map#Map ret (return value: my.Map)
         

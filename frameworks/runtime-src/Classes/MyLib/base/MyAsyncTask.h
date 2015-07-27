@@ -34,6 +34,7 @@ public:
             std::unique_lock<std::mutex> lock(_queueMutex);
             _tasks.emplace([task](){ task(); });
         }
+        printf("唤醒线程\n");
         _condition.notify_one();
     }
 private:

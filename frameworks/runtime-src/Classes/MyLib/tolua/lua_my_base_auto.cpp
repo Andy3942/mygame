@@ -6,7 +6,6 @@
 #include "MyLuaBasicConversions.h"
 
 
-
 int lua_my_base_Map_insert(lua_State* tolua_S)
 {
     int argc = 0;

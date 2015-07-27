@@ -27,20 +27,20 @@ function M:start( ... )
 			print("send_data 没有数据")
 		else
 			local data = send_datas:at(0)
-			send(data:at("text"))
+			print(data:at("text"))
 		end
 		socket.sleep(3)
 	end
 end
 
-function M:send(text)
+function M:send(data)
 	print("发送数据")
 	if self._net_status == NetStatus.CLOSED then
 		print("尚未建立连接，开始连接")
 		connect()
 		print("连接成功")
 	end
-	self._client:send(text)
+	self._client:send(data)
 	
 		
 	-- while true  do

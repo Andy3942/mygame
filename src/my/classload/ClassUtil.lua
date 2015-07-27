@@ -13,7 +13,6 @@ function openAutoload( ... )
 	end
 	local class_path = require("my/classload/ClassPath")
 	mt.__index = function ( t, k )
-		print("kkkk===", k)
 		local class_name = k
 		local class_path = class_path[class_name]
 		if nil == class_path then

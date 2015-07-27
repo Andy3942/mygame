@@ -12,8 +12,8 @@ local function main()
 	require("my/classload/ClassUtil")
 	ClassUtil.openAutoload()
 	
-	-- local script_manager = my.ScriptManager:getInstance()
-	-- script_manager:asyncExecuteScriptFile("my/network/ClientStart.lua", 3)
+	local script_manager = my.ScriptManager:getInstance()
+	script_manager:asyncExecuteScriptFile("my/network/ClientStart.lua", 3)
 
 	local scene = cc.Scene:create()
 	local diretor = cc.Director:getInstance()
@@ -23,23 +23,19 @@ local function main()
 	local send_message_btn = test_layer:getChildByName("sendMessageBtn")
 
 
-	local function previousCallback(sender, eventType)
+	local previousCallback = function(sender, eventType)
         if eventType == ccui.TouchEventType.ended then
-            print("点击了。。。。。。")
+            Network.send("haha")
         end
     end
 
-    local left_button = root:getChildByName("left_Button")
+    local left_button = test_layer:getChildByName("sendMessageBtn")
     send_message_btn:addTouchEventListener(previousCallback)
 
 	if test_layer == nil then
 		print("没道理")
 	end
 	scene:addChild(test_layer)
-
-
-
-	sendMessageBtn
 
 
 	-- local time = os.clock()
@@ -100,9 +96,9 @@ local function main()
 end
 
 local __G__TRACKBACK__ = function(msg)
-    local msg = debug.traceback(msg, 3)
+   	local msg = debug.traceback(msg)
     print(msg)
     return msg
 end
 
-local status, msg = xpcall(main, __G__TRACKBACK__)
+xpcall(main, __G__TRACKBACK__)

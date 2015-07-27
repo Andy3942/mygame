@@ -2,13 +2,9 @@
 -- Date: 	2015-06-12
 -- Purpose: 网络层
 
-local M = {}
-package.seeall(M)
-setfenv(1, M)
-NetStatus = {
-	CONNECTED = 1,
-	CLOSED    = 2,
-}
+local class_name = "Network"
+local M = class(class_name)
+rawset(_G, class_name, M)
 
 local _host 		= "127.0.0.1"--"www.baidu.com"
 local _port 		= 8383--80
@@ -17,28 +13,19 @@ local _listeners 	= {}
 local _net_status 	= NetStatus.CLOSED
 
 
-function send(  )
-
-	if _net_status == NetStatus.CLOSED then
-		connect()
+function M:send(data)
+	local shared_data = my.DataManager:getInstance():getSharedData()
+	local send_datas = shared_data:at("send_datas")
+	if send_datas == nil then
+		send_datas = my.Vector:create()
+		shared_data:insert("send_datas", send_datas)
 	end
-	_client:send("GET / HTTP/1.0\r\n\r\n")
-	
-		
-	-- while true  do
-	-- 	local response, receive_status = _client:receive()
-	-- 	print("receive return:",response or "nil" ,receive_status or "nil")
-	-- 	if receive_status ~= "closed" then
-	-- 		if response then
-	-- 			print("receive:"..response)
-	-- 		end
-	-- 	else
-	-- 		break
-	-- 	end
-	-- end
+	local map_data = my.Map:create()
+	map_data:insert("text", "12312111====")
+	send_datas:pushBack(map_data)
 end
 
-function connect( ... )
+function M:connect( ... )
 	_client = socket.tcp()
 	local tag, err = _client:connect(_host, _port)
 	print(string.format("connect: %s %d", _host, _port), tag, err)
@@ -49,7 +36,7 @@ function connect( ... )
 	end
 end
 
-function setNetStatus( net_status )
+function M:setNetStatus( net_status )
 	_net_status = net_status
 	local s = switch(_net_status)
 	s.case(NetStatus.CLOSED, function ( ... )
@@ -59,7 +46,7 @@ function setNetStatus( net_status )
 	s.close()
 end
 
-function broadcast( event )
+function M:broadcast( event )
 	local listeners = _listeners[event]
 	if nil == listeners then
 		return
@@ -70,7 +57,7 @@ function broadcast( event )
 	end
 end
 
-function addListener( event, callback )
+function M:addListener( event, callback )
 	_listeners[tag] = _listeners[tag] or {}
 	table.insert(_listeners[tag], callback)
 end

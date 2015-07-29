@@ -23,4 +23,5 @@ int register_all_my_base(lua_State* tolua_S);
 
 
 
+
 #endif // __my_base_h__

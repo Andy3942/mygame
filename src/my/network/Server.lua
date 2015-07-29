@@ -1,12 +1,18 @@
 local socket = require("socket")
 
 server = socket.bind("127.0.0.1", 8383)
-control = server:accept();
-while true do 
-    command,status = control:receive();
-	if status == "closed" then 
-		break 
+while true do
+	print("等待客户端连接")
+	control = server:accept();
+	print("客户端连接成功")
+	while true do 
+		print("等待客户端发送数据")
+	    local command,status = control:receive();
+		print("接收到数据：", command, status);
+		if status == "closed" then 
+			break 
+		end
+		local tag, err = control:send("ok\n");
+		print("send:", tag, err)
 	end
-	print(command);
-	control:send("hehe");
 end

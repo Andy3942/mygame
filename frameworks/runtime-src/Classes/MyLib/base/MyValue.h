@@ -35,7 +35,7 @@ public:
     explicit Value(const std::string& v);
     explicit Value(Map* v);
     explicit Value(Vector* v);
-
+    
     int asInt() const;
     float asFloat() const;
     double asDouble() const;
@@ -54,6 +54,7 @@ public:
         DOUBLE,
         BOOLEAN,
         STRING,
+        VOID_P,
         MY_MAP,
         MY_VECTOR,
     };

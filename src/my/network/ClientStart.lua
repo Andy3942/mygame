@@ -5,8 +5,6 @@
 -- require "config"
 -- require "cocos.init"
 
-print("fuck==============33")
-
 require "cocos.cocos2d.functions"
 require "my/init"
 
@@ -18,12 +16,9 @@ local function main()
 end
 
 local __G__TRACKBACK__ = function(msg)
-    local msg = debug.traceback(msg, 3)
+    local msg = debug.traceback(msg)
     print(msg)
     return msg
 end
 
 local status, msg = xpcall(main, __G__TRACKBACK__)
-if not status then
-    print(msg)
-end

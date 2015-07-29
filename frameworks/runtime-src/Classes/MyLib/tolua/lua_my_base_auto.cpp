@@ -304,6 +304,56 @@ int lua_my_base_Vector_at(lua_State* tolua_S)
 
     return 0;
 }
+int lua_my_base_Vector_erase(lua_State* tolua_S)
+{
+    int argc = 0;
+    my::Vector* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"my.Vector",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (my::Vector*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_my_base_Vector_erase'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        ssize_t arg0;
+
+        ok &= luaval_to_ssize(tolua_S, 2, &arg0, "my.Vector:erase");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_my_base_Vector_erase'", nullptr);
+            return 0;
+        }
+        cobj->erase(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "my.Vector:erase",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_my_base_Vector_erase'.",&tolua_err);
+#endif
+
+    return 0;
+}
 int lua_my_base_Vector_pushBack(lua_State* tolua_S)
 {
     int argc = 0;
@@ -448,6 +498,7 @@ int lua_register_my_base_Vector(lua_State* tolua_S)
 
     tolua_beginmodule(tolua_S,"Vector");
         tolua_function(tolua_S,"at",lua_my_base_Vector_at);
+        tolua_function(tolua_S,"erase",lua_my_base_Vector_erase);
         tolua_function(tolua_S,"pushBack",lua_my_base_Vector_pushBack);
         tolua_function(tolua_S,"size",lua_my_base_Vector_size);
         tolua_function(tolua_S,"create", lua_my_base_Vector_create);

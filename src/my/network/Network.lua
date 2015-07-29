@@ -6,34 +6,70 @@ local class_name = "Network"
 local M = class(class_name)
 rawset(_G, class_name, M)
 
-local _host 		= "127.0.0.1"--"www.baidu.com"
-local _port 		= 8383--80
-local _client
-local _listeners 	= {}
-local _net_status 	= NetStatus.CLOSED
+local _listeners 		= {}
+local _net_status 		= NetStatus.CLOSED
+local _push_handlers 	= {}
 
-
-function M:send(data)
+function M:init( ... )
 	local shared_data = my.DataManager:getInstance():getSharedData()
-	local send_datas = shared_data:at("send_datas")
-	if send_datas == nil then
-		send_datas = my.Vector:create()
-		shared_data:insert("send_datas", send_datas)
-	end
-	local map_data = my.Map:create()
-	map_data:insert("text", "12312111====")
-	send_datas:pushBack(map_data)
+	self._send_datas = my.Vector:create()
+	shared_data:insert("send_datas", self._send_datas)
+	self._receive_datas = my.Vector:create()
+	shared_data:insert("receive_datas", self._receive_datas)
+	local client = socket.tcp()
+	shared_data:insert("client", client)
+	print("Network:init==", client, tostring(client), type(client), tolua.type(client))
 end
 
-function M:connect( ... )
-	_client = socket.tcp()
-	local tag, err = _client:connect(_host, _port)
-	print(string.format("connect: %s %d", _host, _port), tag, err)
-	if 1 == tag then
-		_net_status = NetStatus.CONNECTED
-	else
+function M:send(package, handler)
+	local data = my.Map:create()
+	data:insert("package", package)
+	data:insert("handler", handler)
+	self._send_datas:pushBack(data)
+end
 
+function M:startReceive( ... )
+	local receiveFunc = function ( ... )
+		self:receive()
 	end
+	local scheduler = cc.Director:getInstance():getScheduler()
+	scheduler:scheduleScriptFunc(receiveFunc, RECEIVE_INTERVAL, false)
+end
+
+function M:receive( ... )
+	local receive_count = self._receive_datas:size()
+	if receive_count == 0 then
+		return
+	end
+	local receive_data = self._receive_datas:at(0)
+	local package = receive_data:at("package")
+	package = self:parse(package)
+	local push_handler = _push_handlers[package.tag]
+	if push_handler ~= nil then 
+		push_handler()
+	else
+		local send_data = self._send_datas:at(0)
+		local handler = send_data:at("handler")
+		handler(package)
+		self._send_datas:erase(0)
+		self._receive_datas:erase(0)
+	end
+end
+
+function M:re_push( push_tag, handler )
+	_push_handlers[push_tag] = handler
+end
+
+function M:pack( package )
+	-- TODO
+end
+
+function M:parse( package )
+	local ret = {
+		tag = "push",
+		data = "haha",
+	}
+	return ret
 end
 
 function M:setNetStatus( net_status )

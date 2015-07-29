@@ -25,9 +25,10 @@ public:
     virtual ~Vector();
     
     static Vector* create();
-     ssize_t size() const;
+    ssize_t size() const;
     void pushBack(MyValue v);
     MyValue at(ssize_t index);
+    void erase(ssize_t index);
 private:
     std::vector<MyValue> _data;
     std::mutex _lock;

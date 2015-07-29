@@ -13,6 +13,13 @@
         
 --------------------------------
 -- 
+-- @function [parent=#Vector] erase 
+-- @param self
+-- @param #long index
+-- @return Vector#Vector self (return value: my.Vector)
+        
+--------------------------------
+-- 
 -- @function [parent=#Vector] pushBack 
 -- @param self
 -- @param #my.Value v

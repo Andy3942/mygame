@@ -12,20 +12,26 @@ local function main()
 	require("my/classload/ClassUtil")
 	ClassUtil.openAutoload()
 	
+	Network:init()
+	Network:startReceive()
+
 	local script_manager = my.ScriptManager:getInstance()
 	script_manager:asyncExecuteScriptFile("my/network/ClientStart.lua", 3)
 
 	local scene = cc.Scene:create()
 	local diretor = cc.Director:getInstance()
 	diretor:runWithScene(scene)
-
+	
 	local test_layer = cc.CSLoader:createNode("csb/TestLayer.csb")
 	local send_message_btn = test_layer:getChildByName("sendMessageBtn")
 
 
 	local previousCallback = function(sender, eventType)
         if eventType == ccui.TouchEventType.ended then
-            Network.send("haha")
+            local handler = function ( package )
+            	print("回调成功----")
+            end
+            Network:send("haha", handler)
         end
     end
 

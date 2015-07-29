@@ -81,6 +81,7 @@ std::string Value::asString() const
     return *_field.strVal;
 }
 
+
 Map* Value::asMap() const
 {
     return _field.mapVal;

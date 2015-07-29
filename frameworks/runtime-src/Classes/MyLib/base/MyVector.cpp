@@ -42,4 +42,11 @@ Value Vector::at(ssize_t index)
     return _data[index];
 }
 
+void Vector::erase(ssize_t index)
+{
+    _lock.lock();
+    _data.erase(_data.begin() + index);
+    _lock.unlock();
+}
+
 NS_MY_END

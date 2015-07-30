@@ -44,10 +44,11 @@ Value::Value(const std::string& v)
     *_field.strVal = v;
 }
 
-Value::Value(void* v)
+Value::Value(void* v, const char* type_name)
 :_type(Value::Type::VOID_P)
 {
     _field.pVal = v;
+    _type_name = type_name;
 }
 
 Value::Value(Map* v)
@@ -100,6 +101,11 @@ Map* Value::asMap() const
 Vector* Value::asVector() const
 {
     return _field.vecVal;
+}
+
+const char* Value::getTypeName() const
+{
+    return _type_name.c_str();
 }
 
 NS_MY_END

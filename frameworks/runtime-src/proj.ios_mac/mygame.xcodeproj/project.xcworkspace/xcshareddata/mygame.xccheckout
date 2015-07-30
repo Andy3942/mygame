@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>481BB66D-FD48-414B-8211-0E8A0A07ED6B</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>mygame</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>9B70D9FC6161CAB12788FDC80F35BF9357831AE4</key>
 		<string>https://github.com/Andy3942/mygame.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>frameworks/runtime-src/proj.ios_mac/mygame.xcodeproj/project.xcworkspace</string>
+	<string>frameworks/runtime-src/proj.ios_mac/mygame.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>9B70D9FC6161CAB12788FDC80F35BF9357831AE4</key>

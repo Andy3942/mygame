@@ -35,7 +35,7 @@ public:
     explicit Value(const std::string& v);
     explicit Value(Map* v);
     explicit Value(Vector* v);
-    explicit Value(void* v);
+    explicit Value(void* v, const char* type_name);
     
     int asInt() const;
     float asFloat() const;
@@ -45,6 +45,7 @@ public:
     void* asVoidP() const;
     Map* asMap() const;
     Vector* asVector() const;
+    const char* getTypeName() const;
 
     enum class Type
     {
@@ -77,6 +78,7 @@ private:
         Vector* vecVal;
     }_field;
     Type _type;
+    std::string _type_name;
 };
 NS_MY_END
 

@@ -37,7 +37,7 @@ void myvalue_to_luaval(lua_State* L,const my::Value& inValue)
             lua_pushstring(L, obj.asString().c_str());
             break;
         case my::Value::Type::VOID_P:
-            object_to_luaval(L, "notype", obj.asVoidP());
+            object_to_luaval(L, obj.getTypeName(), obj.asVoidP());
             break;
         case my::Value::Type::MY_VECTOR:
             object_to_luaval<my::Vector>(L, "my.Vector", obj.asVector());

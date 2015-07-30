@@ -36,6 +36,9 @@ void myvalue_to_luaval(lua_State* L,const my::Value& inValue)
         case my::Value::Type::STRING:
             lua_pushstring(L, obj.asString().c_str());
             break;
+        case my::Value::Type::VOID_P:
+            object_to_luaval(L, "notype", obj.asVoidP());
+            break;
         case my::Value::Type::MY_VECTOR:
             object_to_luaval<my::Vector>(L, "my.Vector", obj.asVector());
             break;
@@ -91,6 +94,10 @@ bool luaval_to_myvalue(lua_State* L, int lo, my::Value* ret, const char* funcNam
         {
             my::Vector* vecVal = (my::Vector*)tolua_touserdata(L, lo, 0);
             *ret = my::Value(vecVal);
+        }else
+        {
+            void* pVal = tolua_touserdata(L, lo, 0);
+            *ret = my::Value(pVal);
         }
     }
 

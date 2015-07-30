@@ -9,22 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Classes/MyLib/tolua/lua_my_base_auto.cpp"
-            timestampString = "459847271.968427"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "lua_my_base_Map_at(lua_State* tolua_S)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../../cocos2d-x/external/lua/luasocket/inet.c"
             timestampString = "459848408.57199"
             startingColumnNumber = "9223372036854775807"
@@ -32,22 +16,6 @@
             startingLineNumber = "448"
             endingLineNumber = "448"
             landmarkName = "inet_trybind()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../cocos2d-x/external/lua/luasocket/inet.c"
-            timestampString = "459848412.595585"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "386"
-            endingLineNumber = "386"
-            landmarkName = "inet_tryconnect()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

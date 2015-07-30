@@ -70,7 +70,8 @@
 		7E8648831B64BCDC006AE7E9 /* lua_my_base_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E86486B1B64BCDC006AE7E9 /* lua_my_base_auto.cpp */; };
 		7E8648841B64BCDC006AE7E9 /* lua_my_common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E86486D1B64BCDC006AE7E9 /* lua_my_common.cpp */; };
 		7E8648851B64BCDC006AE7E9 /* lua_my_manager_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E86486F1B64BCDC006AE7E9 /* lua_my_manager_auto.cpp */; };
-		7EF740081B68D135000E2659 /* MySocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7EF740061B68D135000E2659 /* MySocket.cpp */; };
+		7EF7400E1B69FED6000E2659 /* MySocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7400C1B69FED6000E2659 /* MySocket.cpp */; };
+		7EF740111B6A35CA000E2659 /* lua_my_network_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7400F1B6A35CA000E2659 /* lua_my_network_auto.cpp */; };
 		9FC760431A67791200D1E6E7 /* lang in Resources */ = {isa = PBXBuildFile; fileRef = 9FC760401A67791200D1E6E7 /* lang */; };
 		9FC760451A677A4A00D1E6E7 /* SimpleConfigParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FC760411A67791200D1E6E7 /* SimpleConfigParser.cpp */; };
 		9FF504841A5E87B100AFDA55 /* ConsoleWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FF504811A5E87B100AFDA55 /* ConsoleWindow.xib */; };
@@ -268,8 +269,10 @@
 		7E86486E1B64BCDC006AE7E9 /* lua_my_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_my_common.h; sourceTree = "<group>"; };
 		7E86486F1B64BCDC006AE7E9 /* lua_my_manager_auto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_my_manager_auto.cpp; sourceTree = "<group>"; };
 		7E8648701B64BCDC006AE7E9 /* lua_my_manager_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_my_manager_auto.hpp; sourceTree = "<group>"; };
-		7EF740061B68D135000E2659 /* MySocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MySocket.cpp; sourceTree = "<group>"; };
-		7EF740071B68D135000E2659 /* MySocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySocket.h; sourceTree = "<group>"; };
+		7EF7400C1B69FED6000E2659 /* MySocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MySocket.cpp; sourceTree = "<group>"; };
+		7EF7400D1B69FED6000E2659 /* MySocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySocket.h; sourceTree = "<group>"; };
+		7EF7400F1B6A35CA000E2659 /* lua_my_network_auto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_my_network_auto.cpp; sourceTree = "<group>"; };
+		7EF740101B6A35CA000E2659 /* lua_my_network_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_my_network_auto.hpp; sourceTree = "<group>"; };
 		9FC7603F1A67791200D1E6E7 /* CodeIDESupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeIDESupport.h; sourceTree = "<group>"; };
 		9FC760401A67791200D1E6E7 /* lang */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lang; sourceTree = "<group>"; };
 		9FC760411A67791200D1E6E7 /* SimpleConfigParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleConfigParser.cpp; sourceTree = "<group>"; };
@@ -422,7 +425,7 @@
 		7E8648471B64BCDC006AE7E9 /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
-				7EF740051B68D00F000E2659 /* network */,
+				7EF7400B1B69FE93000E2659 /* network */,
 				7E8648481B64BCDC006AE7E9 /* base */,
 				7E8648551B64BCDC006AE7E9 /* manager */,
 				7E86485C1B64BCDC006AE7E9 /* MyCommonField.cpp */,
@@ -471,6 +474,8 @@
 		7E8648611B64BCDC006AE7E9 /* tolua */ = {
 			isa = PBXGroup;
 			children = (
+				7EF7400F1B6A35CA000E2659 /* lua_my_network_auto.cpp */,
+				7EF740101B6A35CA000E2659 /* lua_my_network_auto.hpp */,
 				7E8648621B64BCDC006AE7E9 /* api */,
 				7E8648691B64BCDC006AE7E9 /* lua_my.cpp */,
 				7E86486A1B64BCDC006AE7E9 /* lua_my.h */,
@@ -497,11 +502,11 @@
 			path = api;
 			sourceTree = "<group>";
 		};
-		7EF740051B68D00F000E2659 /* network */ = {
+		7EF7400B1B69FE93000E2659 /* network */ = {
 			isa = PBXGroup;
 			children = (
-				7EF740061B68D135000E2659 /* MySocket.cpp */,
-				7EF740071B68D135000E2659 /* MySocket.h */,
+				7EF7400C1B69FED6000E2659 /* MySocket.cpp */,
+				7EF7400D1B69FED6000E2659 /* MySocket.h */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -837,6 +842,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EF740111B6A35CA000E2659 /* lua_my_network_auto.cpp in Sources */,
 				7E8648721B64BCDC006AE7E9 /* MyFunction.cpp in Sources */,
 				7E8648781B64BCDC006AE7E9 /* MyDataManager.cpp in Sources */,
 				7E8648731B64BCDC006AE7E9 /* MyLuaBasicConversions.cpp in Sources */,
@@ -855,7 +861,7 @@
 				7E86487A1B64BCDC006AE7E9 /* MyCommonField.cpp in Sources */,
 				9FFE00A11ACCF59E00D6E35A /* RuntimeLuaImpl.cpp in Sources */,
 				7E8648841B64BCDC006AE7E9 /* lua_my_common.cpp in Sources */,
-				7EF740081B68D135000E2659 /* MySocket.cpp in Sources */,
+				7EF7400E1B69FED6000E2659 /* MySocket.cpp in Sources */,
 				5023811817EBBCAC00990C9B /* AppController.mm in Sources */,
 				7E8648711B64BCDC006AE7E9 /* MyAsyncTask.cpp in Sources */,
 				7E8648831B64BCDC006AE7E9 /* lua_my_base_auto.cpp in Sources */,

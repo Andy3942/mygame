@@ -2,57 +2,84 @@
 //  MySocket.cpp
 //  mygame
 //
-//  Created by bzx on 7/29/15.
+//  Created by bzx on 7/30/15.
 //
 //
-
-#include <sys/socket.h>
-#include <sys/fcntl.h>
 
 #include "MySocket.h"
 
+
 NS_MY_BEGIN
 
-Socket* Socket::create(SocketType socket_type)
+Socket* Socket::create(SocketType socket_type/*=TCP*/)
 {
     auto ret = new(std::nothrow) Socket();
-    if(ret->initWithTCP())
+    ret->init(socket_type);
+    return ret;
+}
+
+bool Socket::init(SocketType socket_type)
+{
+    switch (socket_type)
     {
-        return ret;
+        case SocketType::TCP:
+            break;
+        default:
+            break;
+    }
+    _socket = socket(_protocol.family, _protocol.type, _protocol.flag);
+    if(_socket == SOCKET_INVALID)
+    {
+        return false;
+    }
+    return true;
+}
+
+bool Socket::connet(const char* host, unsigned short port)
+{
+    struct addrinfo connecthints;
+    memset(&connecthints, 0, sizeof(connecthints));
+    connecthints.ai_socktype = _protocol.type;
+    connecthints.ai_family = _protocol.family;
+    struct addrinfo *resolved = NULL;
+    
+    char port_str[10];
+    sprintf(port_str, "%u", port);
+    getaddrinfo(host, port_str, &connecthints, &resolved);
+    if(connect(_socket, connecthints.ai_addr, connecthints.ai_addrlen) == 0)
+    {
+        return true;
+    }
+    return false;
+}
+
+bool Socket::send(const char* buff)
+{
+    unsigned int size =  sizeof(buff);
+    if (::send(_socket, buff, size, _protocol.flag) >= 0) 
+    {
+        return true;
+    }
+    return false;
+}
+
+std::string Socket::receive(unsigned int size)
+{
+    char buff[size];
+    if(recv(_socket, buff, size, _protocol.flag) > 0)
+    {
+        return buff;
     }
     return nullptr;
 }
 
-bool Socket::initWithTCP()
+int Socket::close()
 {
-    _socket = socket(AF_INET, SOCK_STREAM, 0);
-    if(_socket != SOCKET_INVALID)
-    {
-        setBlock(true);
-        return true;
-    }else
-    {
-        return false;
-    }
-}
-
-bool Socket::connect(const char* ip, unsigned short port)
-{
-    
-}
-
-void Socket::setBlock(bool is_block)
-{
-    int flags = fcntl(_socket, F_GETFL, 0);
-    if(is_block)
-    {
-        flags &= (~(O_NONBLOCK));
-    }else
-    {
-        flags |= O_NONBLOCK;
-    }
-    fcntl(_socket, F_SETFL, flags);
-    
+#ifdef OS_WIN32
+    return closesocket(_socket);
+#else
+    return ::close(_socket);
+#endif
 }
 
 int Socket::getError()
@@ -64,32 +91,10 @@ int Socket::getError()
 #endif
 }
 
-const char* Socket::socketStrerror(int err)
+const char* Socket::getStrError(int err)
 {
-    if (err <= 0)
-    {
-        return IOStrerror(err);
-    }
-    switch (err) {
-        case EADDRINUSE: return "address already in use";
-        case EISCONN: return "already connected";
-        case EACCES: return "permission denied";
-        case ECONNREFUSED: return "connection refused";
-        case ECONNABORTED: return "closed";
-        case ECONNRESET: return "closed";
-        case ETIMEDOUT: return "timeout";
-        default: return strerror(err);
-    }
-}
-
-const char* Socket::IOStrerror(int err)
-{
-     switch (err) {
-        case IOType::DONE: return NULL;
-        case IOType::CLOSED: return "closed";
-        case IOType::TIMEOUT: return "timeout";
-        default: return "unknown error"; 
-    }
+    return strerror(err);
 }
 
 NS_MY_END
+

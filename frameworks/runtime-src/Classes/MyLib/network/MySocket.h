@@ -2,7 +2,7 @@
 //  MySocket.h
 //  mygame
 //
-//  Created by bzx on 7/29/15.
+//  Created by bzx on 7/30/15.
 //
 //
 
@@ -10,22 +10,36 @@
 #define __mygame__MySocket__
 
 #include <iostream>
-#include "MyMacros.h"
 
-#define SOCKET_INVALID  -1
+#ifdef OS_WIN32
+
+#include <winsock.h>
+
+#else
+
+#include <netdb.h>
+#include <unistd.h>
+#include <sys/socket.h>
+
+#endif
+
+
+#include "MyMacros.h"
 
 NS_MY_BEGIN
 
-typedef enum{
-    TCP = 1,
-}SocketType;
+#define SOCKET_INVALID -1 
 
-typedef enum {
-    DONE = 0,        /* operation completed successfully */
-    TIMEOUT = -1,    /* operation timed out */
-    CLOSED = -2,     /* the connection has been closed */
-	UNKNOWN = -3     
-}IOType;
+enum SocketType{
+    TCP,
+};
+
+struct Protocol
+{
+    int family = AF_INET;
+    int type = SOCK_STREAM;
+    int flag = 0;
+};
 
 typedef int t_socket;
 
@@ -33,16 +47,16 @@ typedef int t_socket;
 class Socket
 {
 public:
-    static Socket* create(SocketType socket_type);
-    bool initWithTCP();
-    
-    bool connect(const char* ip, unsigned short port);
-    
-    void setBlock(bool is_block);
+    static Socket* create(SocketType socket_type = TCP);
+    bool init(SocketType socket_type);
+    bool connet(const char* host, unsigned short port);
+    bool send(const char* buff);
+    std::string receive(unsigned int size = 8888);
+    int close();
     int getError();
-    static const char* socketStrerror(int err);
-    static const char* IOStrerror(int err);
+    const char* getStrError(int err);
 private:
+    Protocol _protocol;
     t_socket _socket;
 };
 

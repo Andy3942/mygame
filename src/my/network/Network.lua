@@ -16,9 +16,11 @@ function M:init( ... )
 	shared_data:insert("send_datas", self._send_datas)
 	self._receive_datas = my.Vector:create()
 	shared_data:insert("receive_datas", self._receive_datas)
-	local client = socket.tcp()
+	local client = my.Socket:create()
+	print("client=====", tolua.type(client))
 	shared_data:insert("client", client)
-	print("Network:init==", client, tostring(client), type(client), tolua.type(client))
+	local client2 = shared_data:at("client")
+	print("client2=====", tolua.type(client2))
 end
 
 function M:send(package, handler)

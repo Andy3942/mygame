@@ -134,6 +134,7 @@ def main():
         output_dir = '%s/../runtime-src/Classes/MyLib/tolua' % project_root
 
         cmd_args = {
+                    'my_network.ini' : ('my_network', 'lua_my_network_auto'), \
                     'my_base.ini' : ('my_base', 'lua_my_base_auto'), \
                     'my_manager.ini' : ('my_manager', 'lua_my_manager_auto'), \
                     }

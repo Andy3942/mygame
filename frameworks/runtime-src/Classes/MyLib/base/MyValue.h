@@ -35,12 +35,14 @@ public:
     explicit Value(const std::string& v);
     explicit Value(Map* v);
     explicit Value(Vector* v);
+    explicit Value(void* v);
     
     int asInt() const;
     float asFloat() const;
     double asDouble() const;
     bool asBool() const;
     std::string asString() const;
+    void* asVoidP() const;
     Map* asMap() const;
     Vector* asVector() const;
 
@@ -70,6 +72,7 @@ private:
         double doubleVal;
         bool boolVal;
         std::string* strVal;
+        void* pVal;
         Map* mapVal;
         Vector* vecVal;
     }_field;

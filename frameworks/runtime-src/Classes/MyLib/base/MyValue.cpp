@@ -44,6 +44,12 @@ Value::Value(const std::string& v)
     *_field.strVal = v;
 }
 
+Value::Value(void* v)
+:_type(Value::Type::VOID_P)
+{
+    _field.pVal = v;
+}
+
 Value::Value(Map* v)
 :_type(Value::Type::MY_MAP)
 {
@@ -81,6 +87,10 @@ std::string Value::asString() const
     return *_field.strVal;
 }
 
+void* Value::asVoidP() const
+{
+    return _field.pVal;
+}
 
 Map* Value::asMap() const
 {

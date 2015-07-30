@@ -24,7 +24,7 @@ end
 function M:init( ... )
 	local shared_data = my.DataManager:getInstance():getSharedData()
 	self._send_datas = shared_data:at("send_datas")
-	self._receive_datas = shared_data:at("receive_datas")
+	self._receive_datas = shared_data:at("receive_datas")	
 	self._client = socket.tcp()
 end
 
@@ -46,7 +46,7 @@ function M:start( ... )
 			end
 		end
 		self:receive()
-		socket.sleep(2)
+		socket.sleep(0.1)
 	end
 end
 
@@ -69,12 +69,12 @@ function M:receive( ... )
 end
 
 function M:connect( ... )
-	local tag, err = self._client:connect(self._host, self._port, TIMEOUT)
+	local tag, err = self._client:connect(self._host, self._port)
 	print(string.format("connect: %s %d", self._host, self._port), tag, err)
 	if 1 == tag then
 		self._net_status = NetStatus.CONNECTED
 	else
-
+		self._client = socket.tcp()
 	end
 end
 

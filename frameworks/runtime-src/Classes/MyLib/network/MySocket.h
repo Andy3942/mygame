@@ -49,7 +49,7 @@ class Socket
 public:
     static Socket* create(SocketType socket_type = TCP);
     bool init(SocketType socket_type);
-    bool connet(const char* host, unsigned short port);
+    bool connect(const char* host, unsigned short port);
     bool send(const char* buff);
     std::string receive(unsigned int size = 8888);
     int close();

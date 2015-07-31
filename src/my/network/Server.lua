@@ -14,5 +14,7 @@ while true do
 		end
 		local tag, err = control:send("ok\n");
 		print("send:", tag, err)
+		-- socket.sleep(30)
+		-- control:send("haha\n")
 	end
 end

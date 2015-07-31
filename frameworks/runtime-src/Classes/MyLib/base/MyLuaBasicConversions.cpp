@@ -97,7 +97,8 @@ bool luaval_to_myvalue(lua_State* L, int lo, my::Value* ret, const char* funcNam
         }else
         {
             void* pVal = tolua_touserdata(L, lo, 0);
-            *ret = my::Value(pVal);
+            const char* type_name = tolua_typename(L, lo);
+            *ret = my::Value(pVal, type_name);
         }
     }
 

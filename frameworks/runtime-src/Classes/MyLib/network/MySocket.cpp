@@ -35,7 +35,7 @@ bool Socket::init(SocketType socket_type)
     return true;
 }
 
-bool Socket::connet(const char* host, unsigned short port)
+bool Socket::connect(const char* host, unsigned short port)
 {
     struct addrinfo connecthints;
     memset(&connecthints, 0, sizeof(connecthints));
@@ -46,7 +46,7 @@ bool Socket::connet(const char* host, unsigned short port)
     char port_str[10];
     sprintf(port_str, "%u", port);
     getaddrinfo(host, port_str, &connecthints, &resolved);
-    if(connect(_socket, connecthints.ai_addr, connecthints.ai_addrlen) == 0)
+    if(::connect(_socket, resolved->ai_addr, resolved->ai_addrlen) == 0)
     {
         return true;
     }
@@ -55,7 +55,7 @@ bool Socket::connet(const char* host, unsigned short port)
 
 bool Socket::send(const char* buff)
 {
-    unsigned int size =  sizeof(buff);
+    unsigned int size =  strlen(buff);
     if (::send(_socket, buff, size, _protocol.flag) >= 0) 
     {
         return true;
@@ -65,8 +65,9 @@ bool Socket::send(const char* buff)
 
 std::string Socket::receive(unsigned int size)
 {
-    char buff[size];
-    if(recv(_socket, buff, size, _protocol.flag) > 0)
+    char* buff = (char*)malloc(size);
+    int len = recv(_socket, buff, size, _protocol.flag);
+    if(len > 0)
     {
         return buff;
     }

@@ -263,7 +263,7 @@ int lua_my_network_Socket_init(lua_State* tolua_S)
 
     return 0;
 }
-int lua_my_network_Socket_connet(lua_State* tolua_S)
+int lua_my_network_Socket_connect(lua_State* tolua_S)
 {
     int argc = 0;
     my::Socket* cobj = nullptr;
@@ -283,7 +283,7 @@ int lua_my_network_Socket_connet(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_my_network_Socket_connet'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_my_network_Socket_connect'", nullptr);
         return 0;
     }
 #endif
@@ -294,24 +294,24 @@ int lua_my_network_Socket_connet(lua_State* tolua_S)
         const char* arg0;
         unsigned short arg1;
 
-        std::string arg0_tmp; ok &= luaval_to_std_string(tolua_S, 2, &arg0_tmp, "my.Socket:connet"); arg0 = arg0_tmp.c_str();
+        std::string arg0_tmp; ok &= luaval_to_std_string(tolua_S, 2, &arg0_tmp, "my.Socket:connect"); arg0 = arg0_tmp.c_str();
 
-        ok &= luaval_to_ushort(tolua_S, 3, &arg1, "my.Socket:connet");
+        ok &= luaval_to_ushort(tolua_S, 3, &arg1, "my.Socket:connect");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_my_network_Socket_connet'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_my_network_Socket_connect'", nullptr);
             return 0;
         }
-        bool ret = cobj->connet(arg0, arg1);
+        bool ret = cobj->connect(arg0, arg1);
         tolua_pushboolean(tolua_S,(bool)ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "my.Socket:connet",argc, 2);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "my.Socket:connect",argc, 2);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_my_network_Socket_connet'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_my_network_Socket_connect'.",&tolua_err);
 #endif
 
     return 0;
@@ -427,7 +427,7 @@ int lua_register_my_network_Socket(lua_State* tolua_S)
         tolua_function(tolua_S,"getStrError",lua_my_network_Socket_getStrError);
         tolua_function(tolua_S,"send",lua_my_network_Socket_send);
         tolua_function(tolua_S,"init",lua_my_network_Socket_init);
-        tolua_function(tolua_S,"connet",lua_my_network_Socket_connet);
+        tolua_function(tolua_S,"connect",lua_my_network_Socket_connect);
         tolua_function(tolua_S,"close",lua_my_network_Socket_close);
         tolua_function(tolua_S,"create", lua_my_network_Socket_create);
     tolua_endmodule(tolua_S);

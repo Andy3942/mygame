@@ -1,3 +1,6 @@
+-- Author: 	bzx
+-- Date: 	2015-07-31
+-- Purpose: 客户端发送
 
 -- cc.FileUtils:getInstance():setPopupNotify(false)
 -- cc.FileUtils:getInstance():addSearchPath("src/")
@@ -12,7 +15,7 @@ local function main()
 	require("src/my/classload/ClassUtil")
 	ClassUtil.openAutoload()
 	local client = Client:create(CLIENT_HOST, CLIENT_PORT)
-	client:start()
+	client:startSend()
 end
 
 local __G__TRACKBACK__ = function(msg)

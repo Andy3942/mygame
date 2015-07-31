@@ -6,28 +6,28 @@ local class_name = "Network"
 local M = class(class_name)
 rawset(_G, class_name, M)
 
-local _listeners 		= {}
-local _net_status 		= NetStatus.CLOSED
-local _push_handlers 	= {}
+local _listeners 			= {}
+local _net_status 			= NetStatus.CLOSED
+local _push_handlers 		= {}
+local _received_handlers 	= {}
 
 function M:init( ... )
-	local shared_data = my.DataManager:getInstance():getSharedData()
-	self._send_datas = my.Vector:create()
-	shared_data:insert("send_datas", self._send_datas)
-	self._receive_datas = my.Vector:create()
-	shared_data:insert("receive_datas", self._receive_datas)
+	self._shared_data = my.DataManager:getInstance():getSharedData()
+	self._wait_send_datas = my.Vector:create()
+	self._shared_data:insert(WAIT_SEND_DATAS, self._wait_send_datas)
+	self._received_datas = my.Vector:create()
+	self._shared_data:insert(RECEIVED_DATAS, self._received_datas)
+	-- self._wait_receive_datas = my.Vector:create()
+	-- shared_data:insert(WAIT_RECEIVE_DATAS, self._wait_receive_datas)
 	local client = my.Socket:create()
-	print("client=====", tolua.type(client))
-	shared_data:insert("client", client)
-	local client2 = shared_data:at("client")
-	print("client2=====", tolua.type(client2))
+	self._shared_data:insert(CLIENT, client)
 end
 
 function M:send(package, handler)
 	local data = my.Map:create()
 	data:insert("package", package)
-	data:insert("handler", handler)
-	self._send_datas:pushBack(data)
+	self._wait_send_datas:pushBack(data)
+	table.insert(_received_handlers, handler)
 end
 
 function M:startReceive( ... )
@@ -39,22 +39,21 @@ function M:startReceive( ... )
 end
 
 function M:receive( ... )
-	local receive_count = self._receive_datas:size()
-	if receive_count == 0 then
+	local received_count = self._received_datas:size()
+	if received_count == 0 then
 		return
 	end
-	local receive_data = self._receive_datas:at(0)
-	local package = receive_data:at("package")
+	local received_data = self._received_datas:at(0)
+	local package = received_data:at("package")
 	package = self:parse(package)
 	local push_handler = _push_handlers[package.tag]
 	if push_handler ~= nil then 
 		push_handler()
 	else
-		local send_data = self._send_datas:at(0)
-		local handler = send_data:at("handler")
+		local handler = _received_handlers[1]
 		handler(package)
-		self._send_datas:erase(0)
-		self._receive_datas:erase(0)
+		self._received_datas:erase(0)
+		table.remove(_received_handlers, 1)
 	end
 end
 

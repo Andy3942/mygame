@@ -16,7 +16,8 @@ local function main()
 	Network:startReceive()
 
 	local script_manager = my.ScriptManager:getInstance()
-	script_manager:asyncExecuteScriptFile("my/network/ClientStart.lua", 3)
+	script_manager:asyncExecuteScriptFile("my/network/ClientSendMain.lua", 3)
+	script_manager:asyncExecuteScriptFile("my/network/ClientReceiveMain.lua", 4)
 
 	local scene = cc.Scene:create()
 	local diretor = cc.Director:getInstance()

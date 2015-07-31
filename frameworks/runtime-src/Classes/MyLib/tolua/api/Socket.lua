@@ -38,7 +38,7 @@
         
 --------------------------------
 -- 
--- @function [parent=#Socket] connet 
+-- @function [parent=#Socket] connect 
 -- @param self
 -- @param #char host
 -- @param #unsigned short port

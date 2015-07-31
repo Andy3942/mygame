@@ -9,10 +9,9 @@ rawset(_G, class_name, M)
 function M:ctor( host, port )
 	self._host = host
 	self._port = port
-	self._net_status = NetStatus.CLOSED
 	self._client = nil
-	self._send_datas = nil
-	self._receive_datas = nil
+	self._wait_send_datas = nil
+	self._received_datas = nil
 end
 
 function M:create( host, port )
@@ -22,70 +21,80 @@ function M:create( host, port )
 end
 
 function M:init( ... )
-	local shared_data = my.DataManager:getInstance():getSharedData()
-	self._send_datas = shared_data:at("send_datas")
-	self._receive_datas = shared_data:at("receive_datas")	
-	self._client = socket.tcp()
+	self._shared_data = my.DataManager:getInstance():getSharedData()
+	self._wait_send_datas = self._shared_data:at(WAIT_SEND_DATAS)
+	self._received_datas = self._shared_data:at(RECEIVED_DATAS)	
+	-- self._wait_receive_datas = shared_data:at(WAIT_RECEIVE_DATAS)
+	self._client = self._shared_data:at(CLIENT)
 end
 
-function M:start( ... )
-	print("开始启动客户端：", self._host, self._port)
+function M:startSend( ... )
+	print("启动发送线程：", self._host, self._port)
 	while true do
-		local data_count = self._send_datas:size()
+		while self:getNetStatus() ~= NetStatus.CONNECTED do
+			print("尚未建立连接，开始连接")
+			self:connect()
+		end
+		local data_count = self._wait_send_datas:size()
 		if data_count == 0 then
 			print("没有要发送的数据")
 		else
-			if self._net_status ~= NetStatus.CONNECTED then
-				print("尚未建立连接，开始连接")
-				self:connect()
-			end
-			if self._net_status == NetStatus.CONNECTED then
-				local data = self._send_datas:at(0)
-				local package = data:at("package")
-				self:send(package)
+			if self:getNetStatus() == NetStatus.CONNECTED then
+				self:send()
 			end
 		end
-		self:receive()
 		socket.sleep(0.1)
 	end
 end
 
-function M:send(package)
-	self._client:send(package .. "\n")
-	print("发送：", package)
+function M:startReceive( ... )
+	print("启动接收线程：", self._host, self._port)
+	while true do
+		self:receive()
+	end
+end
+
+function M:send()
+	local data = self._wait_send_datas:at(0)
+	local package = data:at("package")
+	local ret = self._client:send(package .. "\n")
+	print("发送：", package, ret)
+	if ret then
+		self._wait_send_datas:erase(0)
+	end
 end
 
 function M:receive( ... )
-	if self._net_status ~= NetStatus.CONNECTED then
+	print("等待接收")
+	if self:getNetStatus() ~= NetStatus.CONNECTED then
 		return
 	end
-	local package, status = self._client:receive()
-	print("received:", package, status)
+	local package = self._client:receive()
+	print("===========")
+	print("received:", package)
+	print("============")
 	if package ~= nil then
 		local receive_data = my.Map:create()
 		receive_data:insert("package", package)
-		self._receive_datas:pushBack(receive_data)
+		self._received_datas:pushBack(receive_data)
 	end
 end
 
 function M:connect( ... )
-	local tag, err = self._client:connect(self._host, self._port)
+	local ret = self._client:connect(self._host, self._port)
 	print(string.format("connect: %s %d", self._host, self._port), tag, err)
-	if 1 == tag then
-		self._net_status = NetStatus.CONNECTED
+	if ret then
+		self:setNetStatus(NetStatus.CONNECTED)
 	else
-		self._client = socket.tcp()
 	end
 end
 
 function M:setNetStatus( net_status )
-	self._net_status = net_status
-	local s = switch(self._net_status)
-	s.case(NetStatus.CLOSED, function ( ... )
-		broadcast("closed")
-	end)
-	s.case(NetStatus.CONNECTED)
-	s.close()
+	self._shared_data:insert(NET_STATUS, net_status)
+end
+
+function M:getNetStatus( ... )
+	return self._shared_data:at(NET_STATUS)
 end
 
 function M:broadcast( event )

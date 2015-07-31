@@ -12,7 +12,7 @@ while true do
 		if status == "closed" then 
 			break 
 		end
-		local tag, err = control:send("ok\n");
+		local tag, err = control:send("ok");
 		print("send:", tag, err)
 		-- socket.sleep(30)
 		-- control:send("haha\n")

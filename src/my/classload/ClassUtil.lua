@@ -5,7 +5,6 @@ package.seeall(M)
 setfenv(1, M)
 
 function openAutoload( ... )
-	print("openAutoload======")
 	local mt = getmetatable(_G)
 	if mt == nil then
 		mt = {}
@@ -18,7 +17,6 @@ function openAutoload( ... )
 		if nil == class_path then
 			return nil
 		end
-		print("class_name==", class_name, class_path, "hehe")
 		local class = require(class_path)
 		rawset(_G, class_name, class)
 		return class

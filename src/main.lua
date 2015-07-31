@@ -102,10 +102,4 @@ local function main()
  -- print("fuck")
 end
 
-local __G__TRACKBACK__ = function(msg)
-   	local msg = debug.traceback(msg)
-    print(msg)
-    return msg
-end
-
 xpcall(main, __G__TRACKBACK__)

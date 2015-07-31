@@ -66,6 +66,9 @@ function M:pack( package )
 end
 
 function M:parse( package )
+	if package == "" then
+		return nil
+	end
 	local ret = {
 		tag = "push",
 		data = "haha",

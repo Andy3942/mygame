@@ -65,13 +65,14 @@ bool Socket::send(const char* buff)
 
 std::string Socket::receive(unsigned int size)
 {
-    char* buff = (char*)malloc(size);
+    char* buff = (char*)malloc(size + 1);
     int len = recv(_socket, buff, size, _protocol.flag);
     if(len > 0)
-    {
+    {   
+        buff[len + 1] = '\0';
         return buff;
     }
-    return nullptr;
+    return "";
 }
 
 int Socket::close()

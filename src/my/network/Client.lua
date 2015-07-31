@@ -70,9 +70,7 @@ function M:receive( ... )
 		return
 	end
 	local package = self._client:receive()
-	print("===========")
 	print("received:", package)
-	print("============")
 	if package ~= nil then
 		local receive_data = my.Map:create()
 		receive_data:insert("package", package)
